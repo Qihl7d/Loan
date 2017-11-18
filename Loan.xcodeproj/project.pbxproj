@@ -44,6 +44,7 @@
 		8BB054711FB6946500513811 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB054701FB6946500513811 /* PaymentViewController.swift */; };
 		8BB054731FB6DCE400513811 /* RepayBillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB054721FB6DCE400513811 /* RepayBillsViewController.swift */; };
 		8BB054751FB6E0A200513811 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB054741FB6E0A200513811 /* HelpViewController.swift */; };
+		8BD057201FBEB45500CFF0CB /* StringPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0571F1FBEB45500CFF0CB /* StringPickerView.swift */; };
 		8BD2AACF1FBBD75A00AD05A1 /* MBProgressHUD+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2AACE1FBBD75A00AD05A1 /* MBProgressHUD+HUD.swift */; };
 		8BD2AAD11FBBF4B000AD05A1 /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2AAD01FBBF4B000AD05A1 /* MineModel.swift */; };
 		8BD2AAD31FBC161D00AD05A1 /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2AAD21FBC161D00AD05A1 /* CreditModel.swift */; };
@@ -122,6 +123,7 @@
 		8BB054701FB6946500513811 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		8BB054721FB6DCE400513811 /* RepayBillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepayBillsViewController.swift; sourceTree = "<group>"; };
 		8BB054741FB6E0A200513811 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		8BD0571F1FBEB45500CFF0CB /* StringPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringPickerView.swift; sourceTree = "<group>"; };
 		8BD2AACE1FBBD75A00AD05A1 /* MBProgressHUD+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+HUD.swift"; sourceTree = "<group>"; };
 		8BD2AAD01FBBF4B000AD05A1 /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
 		8BD2AAD21FBC161D00AD05A1 /* CreditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		8BD6335F1FB16562001B9200 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8BD0571F1FBEB45500CFF0CB /* StringPickerView.swift */,
 				8BAA08EA1FBAC8A8007142F1 /* MMActionSheet.swift */,
 				8BAA08E91FBAC8A8007142F1 /* MMButton.swift */,
 				8BF414871FB2B5F200FA11DA /* CardCell.swift */,
@@ -684,6 +687,7 @@
 				8BF7C3331FBD745400B3D992 /* MsgCenterViewController.swift in Sources */,
 				8BD6337B1FB1A061001B9200 /* LCTitleCell.swift in Sources */,
 				8BD2AACF1FBBD75A00AD05A1 /* MBProgressHUD+HUD.swift in Sources */,
+				8BD057201FBEB45500CFF0CB /* StringPickerView.swift in Sources */,
 				8B5A7B4D1FB1A98B00946AA0 /* CreditViewController.swift in Sources */,
 				8BF7C3351FBD775800B3D992 /* MsgCell.swift in Sources */,
 			);

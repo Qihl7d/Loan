@@ -18,10 +18,23 @@ let keyView = UIApplication.shared.keyWindow!
 let kScreen_w = UIScreen.main.bounds.size.width
 let kScreen_h = UIScreen.main.bounds.size.height
 
-let IS_IPhone5_5s:         Bool = kScreen_h == 568 ? true : false   // 5-5s
-let IS_IPhone6_6s_7_8:     Bool = kScreen_h == 667 ? true : false   // 6-6s-7-8
-let IS_IPhone6p_6sp_7p_8p: Bool = kScreen_h == 736 ? true : false   // 6p-6sp-7p-8p
-let IS_IPhone_X:           Bool = kScreen_h == 812 ? true : false   // x
+/*
+   宽高比：
+ 
+           5s -->  320/568 = 0.5633
+     6/6s/7/8 -->  375/667 = 0.5622
+ 6p/6sp/7p/8p -->  414/736 = 0.5625
+     iphone_x -->  375/812 = 0.4618
+ 
+ */
+
+
+
+/// 设计屏幕适配
+let IS_IPhone5_5s:         Bool = kScreen_h == 568 ? true : false
+let IS_IPhone6_6s_7_8:     Bool = kScreen_h == 667 ? true : false
+let IS_IPhone6p_6sp_7p_8p: Bool = kScreen_h == 736 ? true : false
+let IS_IPhone_X:           Bool = kScreen_h == 812 ? true : false
 
 // MARK: - 自定义方法
 func printLog<T>(_ message: T,logError: Bool = false,file: String = #file,method: String = #function,line: Int = #line) {

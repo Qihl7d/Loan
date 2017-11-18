@@ -10,6 +10,8 @@ import UIKit
 
 class CardCell: UICollectionViewCell {
 
+    @IBOutlet weak var moneyLab: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.cuttingCorner(radius: 10)

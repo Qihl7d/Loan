@@ -89,10 +89,27 @@ extension TradersPasswordViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        printLog("输入的------\(string)---\(range)")
+        
         if (textField == self.passworldTF) {
+            
             if (range.location >= 6) {
+                
                 return false
+                
             } else {
+                
+                if string == "" {
+                    
+                    if psd.count != 0 {
+                        self.psd.removeLast()
+                    }
+                    
+                } else {
+                    self.psd.append(string)
+                }
+                
+                printLog(psd)
                 
                 if (range.length == 0) { //文本输入状态
                     let pointX = ((passworldTF.width-62.5) / 12) * CGFloat(range.location * 2 + 1) + CGFloat(range.location) * 10.5
@@ -106,19 +123,14 @@ extension TradersPasswordViewController: UITextFieldDelegate {
                     passworldTF.addSubview(blackPoint)
                     
                     pointViewArr.append(blackPoint)
-                } else {  //文本删除状态
+                } else {
+                    
+                    //文本删除状态
                     //移除黑点
                     pointViewArr[range.location].removeFromSuperview()
                     pointViewArr.remove(at: range.location)
                 }
-                
-                if string == "" {
-                    self.psd.removeLast()
-                } else {
-                    self.psd.append(string)
-                }
-                printLog(psd)
-                
+
                 if psd.count == 6 {
                     
                     let ps = psd.joined(separator: "")

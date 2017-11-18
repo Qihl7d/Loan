@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window?.backgroundColor = UIColor.white
         
+        printLog("window----\(String(describing: window?.frame))")
+        
         // 提前注册一个VersionCode 的 NSUserDefaults
         let dict: [String: Any] = [logigSuccess: false]
         UserDefaults.standard.register(defaults: dict)

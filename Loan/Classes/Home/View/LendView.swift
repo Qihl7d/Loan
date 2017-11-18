@@ -14,6 +14,8 @@ protocol LendViewDelegate: class {
 
 class LendView: UIView {
     
+    @IBOutlet weak var loadBtnConstraint: NSLayoutConstraint!
+    
     /// 借款期限
     @IBOutlet weak var dayLab: UILabel!
     /// 每期还款金额
@@ -29,6 +31,12 @@ class LendView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        if IS_IPhone5_5s {
+            loadBtnConstraint.constant = 20
+        }
+        
+        
     }
     
     class func loadLendViewWithXib() -> LendView {

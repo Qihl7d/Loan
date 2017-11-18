@@ -1687,19 +1687,19 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_approve" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-88-xde">
-                                <rect key="frame" x="15" y="291" width="345" height="61"/>
+                                <rect key="frame" x="15" y="292" width="345" height="61"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_unapprove" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-bu-1K5">
-                                <rect key="frame" x="15" y="362" width="345" height="61"/>
+                                <rect key="frame" x="15" y="363" width="345" height="61"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_unapprove" translatesAutoresizingMaskIntoConstraints="NO" id="va5-Y7-CC5">
-                                <rect key="frame" x="15" y="433" width="345" height="61"/>
+                                <rect key="frame" x="15" y="434" width="345" height="61"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_unapprove" translatesAutoresizingMaskIntoConstraints="NO" id="veD-jF-TVY">
-                                <rect key="frame" x="15" y="504" width="345" height="61"/>
+                                <rect key="frame" x="15" y="505" width="345" height="61"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F23-L5-Hlk">
-                                <rect key="frame" x="15" y="291" width="345" height="61"/>
+                                <rect key="frame" x="15" y="292" width="345" height="61"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_bank" translatesAutoresizingMaskIntoConstraints="NO" id="WCF-Xw-rL7">
                                         <rect key="frame" x="15" y="20" width="26" height="20"/>
@@ -1730,7 +1730,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH0-gz-K8D">
-                                <rect key="frame" x="15" y="362" width="345" height="61"/>
+                                <rect key="frame" x="15" y="363" width="345" height="61"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_person" translatesAutoresizingMaskIntoConstraints="NO" id="DbN-El-djH">
                                         <rect key="frame" x="15" y="19" width="26" height="22"/>
@@ -1761,7 +1761,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-GM-vm7">
-                                <rect key="frame" x="15" y="433" width="345" height="61"/>
+                                <rect key="frame" x="15" y="434" width="345" height="61"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_zhima" translatesAutoresizingMaskIntoConstraints="NO" id="7yb-Hd-W7A">
                                         <rect key="frame" x="15" y="15" width="25" height="30"/>
@@ -1792,7 +1792,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcI-lV-bVE">
-                                <rect key="frame" x="15" y="504" width="345" height="61"/>
+                                <rect key="frame" x="15" y="505" width="345" height="61"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Hb1-br-hg4">
                                         <rect key="frame" x="15" y="17" width="18" height="27"/>
@@ -1823,25 +1823,25 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqf-qh-ex3" userLabel="bank">
-                                <rect key="frame" x="15" y="291" width="345" height="61"/>
+                                <rect key="frame" x="15" y="292" width="345" height="61"/>
                                 <connections>
                                     <action selector="bankApprove:" destination="WCP-31-em0" eventType="touchUpInside" id="f6z-Ut-bGj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZw-Hy-NH1" userLabel="person">
-                                <rect key="frame" x="15" y="362" width="345" height="61"/>
+                                <rect key="frame" x="15" y="363" width="345" height="61"/>
                                 <connections>
                                     <action selector="personApprove:" destination="WCP-31-em0" eventType="touchUpInside" id="hTM-nE-52a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRv-2P-oLx" userLabel="zhima">
-                                <rect key="frame" x="15" y="433" width="345" height="61"/>
+                                <rect key="frame" x="15" y="434" width="345" height="61"/>
                                 <connections>
                                     <action selector="zhimaApprove:" destination="WCP-31-em0" eventType="touchUpInside" id="D9h-zx-Sod"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d5-xt-Dzb" userLabel="yunyingshang">
-                                <rect key="frame" x="15" y="504" width="345" height="61"/>
+                                <rect key="frame" x="15" y="505" width="345" height="61"/>
                                 <connections>
                                     <action selector="operatorApporve:" destination="WCP-31-em0" eventType="touchUpInside" id="dsU-to-IRR"/>
                                 </connections>
@@ -1859,7 +1859,7 @@
                             <constraint firstItem="3d5-xt-Dzb" firstAttribute="trailing" secondItem="OcI-lV-bVE" secondAttribute="trailing" id="CrS-eu-2Ae"/>
                             <constraint firstItem="c6d-88-xde" firstAttribute="centerX" secondItem="8vI-el-vEM" secondAttribute="centerX" id="Dq5-in-eEK"/>
                             <constraint firstItem="Gqf-qh-ex3" firstAttribute="top" secondItem="F23-L5-Hlk" secondAttribute="top" id="EJ6-31-k5B"/>
-                            <constraint firstItem="c6d-88-xde" firstAttribute="top" secondItem="n5l-xU-x3M" secondAttribute="bottom" constant="24" id="FYc-3e-x3f"/>
+                            <constraint firstItem="c6d-88-xde" firstAttribute="top" secondItem="n5l-xU-x3M" secondAttribute="bottom" constant="25" id="FYc-3e-x3f"/>
                             <constraint firstItem="va5-Y7-CC5" firstAttribute="top" secondItem="jO6-bu-1K5" secondAttribute="bottom" constant="10" id="Hte-Ir-bpg"/>
                             <constraint firstItem="n5l-xU-x3M" firstAttribute="height" secondItem="8vI-el-vEM" secondAttribute="height" multiplier="0.4" id="Hvu-oc-iSR"/>
                             <constraint firstAttribute="trailing" secondItem="va5-Y7-CC5" secondAttribute="trailing" constant="15" id="LAx-No-d08"/>
@@ -1911,6 +1911,7 @@
                         <outlet property="creditImageView" destination="a0a-DA-0nk" id="Nxd-wc-Hdg"/>
                         <outlet property="creditView" destination="n5l-xU-x3M" id="5JD-Ko-4QQ"/>
                         <outlet property="lendBtn" destination="eas-ge-Fda" id="lZj-Z3-ri5"/>
+                        <outlet property="loadBtnTopConstraint" destination="RRx-Jc-xdl" id="Dqs-RJ-CU0"/>
                         <outlet property="operatorApproveImg" destination="veD-jF-TVY" id="N3j-jO-rji"/>
                         <outlet property="personApproveImg" destination="jO6-bu-1K5" id="1oG-0M-HfM"/>
                         <outlet property="topLayoutConstraint" destination="iLO-Qd-d36" id="0AI-m9-24e"/>
@@ -1934,16 +1935,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_card_p" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-dJ-MAf">
-                                <rect key="frame" x="30" y="99" width="315" height="185"/>
+                                <rect key="frame" x="15" y="99" width="345" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="liz-78-GoU"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_headImage" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-HL-7iO">
-                                <rect key="frame" x="60" y="323" width="45" height="45"/>
+                                <rect key="frame" x="45" y="314" width="45" height="45"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_qipao" translatesAutoresizingMaskIntoConstraints="NO" id="6Dg-8f-oYS">
-                                <rect key="frame" x="105" y="332.5" width="204" height="26"/>
+                                <rect key="frame" x="90" y="323.5" width="204" height="26"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmW-AR-c8n">
-                                <rect key="frame" x="60" y="466.5" width="255" height="40"/>
+                                <rect key="frame" x="60" y="419" width="255" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tX9-59-P2N"/>
@@ -1963,16 +1967,16 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_anquan" translatesAutoresizingMaskIntoConstraints="NO" id="fyV-J4-bVi">
-                                <rect key="frame" x="104" y="513.5" width="14" height="16"/>
+                                <rect key="frame" x="104" y="466" width="14" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不向学生提供贷款服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ak0-Y3-itx">
-                                <rect key="frame" x="126" y="514.5" width="123" height="14.5"/>
+                                <rect key="frame" x="126" y="467" width="123" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.77647058823529413" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已有3474534人加入中融秒贷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hM-40-E35">
-                                <rect key="frame" x="105" y="332.5" width="204" height="25.5"/>
+                                <rect key="frame" x="90" y="323.5" width="204" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1981,11 +1985,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ak0-Y3-itx" firstAttribute="leading" secondItem="fyV-J4-bVi" secondAttribute="trailing" constant="8" id="6dl-Xs-SOm"/>
-                            <constraint firstItem="GKs-tt-m4d" firstAttribute="top" secondItem="NmW-AR-c8n" secondAttribute="bottom" constant="111.5" id="CtO-cE-kGn"/>
                             <constraint firstItem="ak0-Y3-itx" firstAttribute="top" secondItem="NmW-AR-c8n" secondAttribute="bottom" constant="8" id="DKQ-9u-grK"/>
                             <constraint firstItem="6Dg-8f-oYS" firstAttribute="centerY" secondItem="xZK-HL-7iO" secondAttribute="centerY" id="J4A-MD-Gb0"/>
+                            <constraint firstItem="NmW-AR-c8n" firstAttribute="top" secondItem="xZK-HL-7iO" secondAttribute="bottom" constant="60" id="Kd3-Sc-E3f"/>
                             <constraint firstItem="jvs-dJ-MAf" firstAttribute="top" secondItem="0iD-2a-1I0" secondAttribute="bottom" constant="35" id="OTo-nn-hsN"/>
-                            <constraint firstItem="xZK-HL-7iO" firstAttribute="top" secondItem="jvs-dJ-MAf" secondAttribute="bottom" constant="39" id="SaI-HR-0lX"/>
+                            <constraint firstItem="xZK-HL-7iO" firstAttribute="top" secondItem="jvs-dJ-MAf" secondAttribute="bottom" constant="30" id="SaI-HR-0lX"/>
                             <constraint firstItem="NmW-AR-c8n" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ScY-QX-j7y" secondAttribute="leading" constant="60" id="Sdv-CL-MmT"/>
                             <constraint firstItem="fyV-J4-bVi" firstAttribute="centerY" secondItem="ak0-Y3-itx" secondAttribute="centerY" id="Tdv-aH-dgp"/>
                             <constraint firstItem="ak0-Y3-itx" firstAttribute="centerX" secondItem="NmW-AR-c8n" secondAttribute="centerX" id="VBR-CC-YhQ"/>
@@ -1993,11 +1997,11 @@
                             <constraint firstItem="5hM-40-E35" firstAttribute="leading" secondItem="6Dg-8f-oYS" secondAttribute="leading" id="bfl-gL-zzB"/>
                             <constraint firstItem="5hM-40-E35" firstAttribute="top" secondItem="6Dg-8f-oYS" secondAttribute="top" id="cVL-5M-t8I"/>
                             <constraint firstItem="6Dg-8f-oYS" firstAttribute="leading" secondItem="xZK-HL-7iO" secondAttribute="trailing" id="eTD-9g-MTm"/>
-                            <constraint firstAttribute="trailing" secondItem="jvs-dJ-MAf" secondAttribute="trailing" constant="30" id="jS4-Je-Oby"/>
+                            <constraint firstAttribute="trailing" secondItem="jvs-dJ-MAf" secondAttribute="trailing" constant="15" id="jS4-Je-Oby"/>
                             <constraint firstItem="xZK-HL-7iO" firstAttribute="leading" secondItem="jvs-dJ-MAf" secondAttribute="leading" constant="30" id="pb7-ip-ZSp"/>
                             <constraint firstItem="5hM-40-E35" firstAttribute="bottom" secondItem="6Dg-8f-oYS" secondAttribute="bottom" id="qxs-TG-MCC"/>
                             <constraint firstItem="5hM-40-E35" firstAttribute="trailing" secondItem="6Dg-8f-oYS" secondAttribute="trailing" id="rWf-yp-0dr"/>
-                            <constraint firstItem="jvs-dJ-MAf" firstAttribute="leading" secondItem="ScY-QX-j7y" secondAttribute="leading" constant="30" id="wMm-nw-8t2"/>
+                            <constraint firstItem="jvs-dJ-MAf" firstAttribute="leading" secondItem="ScY-QX-j7y" secondAttribute="leading" constant="15" id="wMm-nw-8t2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="中融秒贷" id="7Wi-v9-7rJ">
@@ -2011,6 +2015,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cardImage" destination="jvs-dJ-MAf" id="E9W-cc-Uud"/>
+                        <outlet property="cardImgConstraint" destination="liz-78-GoU" id="lVm-vi-IRJ"/>
+                        <outlet property="loanBtnConstraint" destination="Kd3-Sc-E3f" id="zw3-2z-Sqi"/>
+                        <outlet property="personImgConstraint" destination="SaI-HR-0lX" id="plG-of-rdH"/>
                         <outlet property="personLab" destination="5hM-40-E35" id="TjG-4g-fAi"/>
                     </connections>
                 </viewController>

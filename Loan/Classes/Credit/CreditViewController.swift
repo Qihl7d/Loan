@@ -21,6 +21,7 @@ class CreditViewController: UIViewController {
     @IBOutlet weak var lendBtn: UIButton!
     @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
 
+    @IBOutlet weak var loadBtnTopConstraint: NSLayoutConstraint!
     /// 银行卡认证
     @IBOutlet weak var bankApproveImg: UIImageView!
     /// 个人身份认证（个人信息和身份证以及人脸识别）
@@ -145,6 +146,10 @@ extension CreditViewController {
         
         view.layer.insertSublayer(gradientLayer, at: 0)
         
+        if IS_IPhone5_5s {
+           loadBtnTopConstraint.constant = 0
+        }
+        
         creditLab = LCCounterLabel(frame: CGRect.zero, type: .Int)
         creditView.addSubview(creditLab)
         creditLab.textColor = UIColor(hexString: "FFC832")
@@ -174,11 +179,23 @@ extension CreditViewController {
        
         /// 路径1
         let path = UIBezierPath()
-        path.addArc(withCenter: center, radius: 75, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: true)
         
+        if IS_IPhone5_5s {
+            path.addArc(withCenter: center, radius: 60, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: true)
+        }else {
+          path.addArc(withCenter: center, radius: 75, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: true)
+        }
+
         /// 动画路径
         let apath = UIBezierPath()
-        apath.addArc(withCenter: center, radius: 75, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng) - endAng, clockwise: true)
+        
+        if IS_IPhone5_5s {
+           apath.addArc(withCenter: center, radius: 60, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng) - endAng, clockwise: true)
+        }else{
+          apath.addArc(withCenter: center, radius: 75, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng) - endAng, clockwise: true)
+        }
+        
+        
         
         /// 渲染图层
         let pathLayer = CAShapeLayer()
@@ -200,15 +217,21 @@ extension CreditViewController {
         
         animateImage = UIImageView(frame: CGRect(x: 0, y: 100, width: 8, height: 8))
         animateImage.image = UIImage(named: "credit_hight")?.withRenderingMode(.alwaysOriginal)
-        self.creditView.layer.addSublayer(pathLayer)
-        self.creditView.addSubview(animateImage)
+        
+        creditView.layer.addSublayer(pathLayer)
+        creditView.addSubview(animateImage)
         /// 最后添加旋转动画
         animateImage.layer.add(orbit, forKey: nil)
         
         
         /// 内圈虚线
         let path1 = UIBezierPath()
-        path1.addArc(withCenter: center, radius: 70, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: true)
+        if IS_IPhone5_5s {
+           path1.addArc(withCenter: center, radius: 55, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: true)
+        }else {
+            path1.addArc(withCenter: center, radius: 70, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: true)
+        }
+        
 
         let pathLayer1 = CAShapeLayer()
         pathLayer1.lineCap = kCALineCapRound
@@ -220,7 +243,12 @@ extension CreditViewController {
         pathLayer1.lineDashPattern = [NSNumber(value: 1), NSNumber(value: 5)]
         
         let p = CGMutablePath()
-        p.addArc(center: center, radius: 70, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: false)
+        if IS_IPhone5_5s {
+            p.addArc(center: center, radius: 55, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: false)
+        }else {
+            p.addArc(center: center, radius: 70, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng), clockwise: false)
+        }
+        
         pathLayer1.path = p
         creditView.layer.addSublayer(pathLayer1)
         

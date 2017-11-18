@@ -40,6 +40,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="128" height="85"/>
+            <connections>
+                <outlet property="moneyLab" destination="bd5-5g-LgG" id="UAz-n9-X5E"/>
+            </connections>
             <point key="canvasLocation" x="64" y="69.5"/>
         </collectionViewCell>
     </objects>

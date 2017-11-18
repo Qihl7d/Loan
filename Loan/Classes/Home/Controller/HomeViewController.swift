@@ -11,6 +11,11 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var cardImgConstraint: NSLayoutConstraint!
+    @IBOutlet weak var personImgConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loanBtnConstraint: NSLayoutConstraint!
+    
+    
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var personLab: UILabel!
 
@@ -22,7 +27,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.barTintColor = UIColor(r: 39, g: 143, b: 166)
+        navigationController?.navigationBar.barTintColor = UIColor(r: 82, g: 158, b: 178)
         UIApplication.shared.statusBarStyle = .lightContent
         creditLab.countFrom(start: 6123, to: 6543, duration: 1)
     }
@@ -41,10 +46,25 @@ class HomeViewController: UIViewController {
         setupUI()
         fetchData()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if IS_IPhone6_6s_7_8 {
+            
+        }
+        
+        if IS_IPhone6p_6sp_7p_8p {
+            cardImgConstraint.constant = 185 + 50
+            personImgConstraint.constant = 80
+            loanBtnConstraint.constant = 80
+        }
+        
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -69,12 +89,9 @@ class HomeViewController: UIViewController {
     ///  立即借款
     @IBAction func lendAction(_ sender: UIButton) {
         
-//        NetworkTools.fetchInfo { (_) in
-//
-//        }
-
         let repay = BorrowViewController()
         navigationController?.pushViewController(repay, animated: true)
+   
     }
 }
 
@@ -125,19 +142,23 @@ extension HomeViewController {
             make.width.equalTo((kScreen_w - 60)/3)
         }
         
+        printLog("卡片的frame---\(cardImage.bounds)")
+        
         // 背景渐变色
-        let colors = [UIColor(r: 39, g: 143, b: 166).cgColor,
-                      UIColor(r: 24, g: 124, b: 224).cgColor]
+        let colors = [UIColor(r: 82, g: 158, b: 178).cgColor,
+                      UIColor(r: 64, g: 131, b: 217).cgColor,
+                      UIColor(r: 49, g: 110, b: 180).cgColor]
         //创建CAGradientLayer对象
         gradientLayer = CAGradientLayer()
         //设置初始渐变色
         gradientLayer.colors = colors
         //每种颜色所在的位置
-        gradientLayer.locations = [0.1,1.0]
-        
+        gradientLayer.locations = [0.1,0.5,1.0]
+
         //设置其CAGradientLayer对象的frame，并插入view的layer
         gradientLayer.frame = self.view.frame
         view.layer.insertSublayer(gradientLayer, at: 0)
+            
         
 //        tableView = UITableView(frame: CGRect.zero, style: .plain)
 //        tableView.backgroundColor = UIColor.clear
