@@ -31,8 +31,8 @@
                                         <color key="textColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avh-RS-3Ux">
-                                        <rect key="frame" x="107" y="52" width="108.5" height="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avh-RS-3Ux">
+                                        <rect key="frame" x="107" y="52" width="46" height="43"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
                                         <color key="textColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -255,7 +255,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="waitRepayCell" rowHeight="60" id="BN5-6N-hnZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="waitRepayCell" rowHeight="60" id="BN5-6N-hnZ" customClass="WaitRepayCell" customModule="Loan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BN5-6N-hnZ" id="yNt-mE-708">
@@ -308,7 +308,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="aDu-l4-aCT" kind="show" id="Wxp-7I-vCQ"/>
+                                            <outlet property="loadTimeLab" destination="xl8-mh-rtX" id="wg4-W2-iL3"/>
+                                            <outlet property="loanMoneyLab" destination="MOx-hb-bAp" id="B6j-Qc-fHB"/>
+                                            <outlet property="loanStatusLab" destination="rEe-LC-sNF" id="5Fh-U1-5uh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -329,6 +331,7 @@
                     <navigationItem key="navigationItem" title="待还账单" id="oOf-gt-MzZ"/>
                     <connections>
                         <outlet property="tableView" destination="YI9-qh-MAu" id="aKV-dC-O62"/>
+                        <segue destination="aDu-l4-aCT" kind="show" identifier="repayCellIdentifier" id="Jpx-Ih-RnX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhY-X0-5CM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -492,14 +495,12 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE5-Vw-ERw">
                                 <rect key="frame" x="0.0" y="148" width="375" height="50"/>
-                                <state key="normal" title="bank"/>
                                 <connections>
                                     <action selector="bankAction:" destination="w1E-Gq-CNJ" eventType="touchUpInside" id="Hzd-OV-iG3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvc-Gq-yTJ">
                                 <rect key="frame" x="0.0" y="198" width="375" height="50"/>
-                                <state key="normal" title="wechat"/>
                                 <connections>
                                     <action selector="weChatAction:" destination="w1E-Gq-CNJ" eventType="touchUpInside" id="IVq-D1-rkp"/>
                                 </connections>

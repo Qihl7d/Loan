@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 借款model
 class RepayModel {
     
     /// 订单时间
@@ -31,6 +32,7 @@ class RepayModel {
 
 }
 
+/// 订单model～
 class CustomerOrder {
     
     var id: Int?
@@ -77,9 +79,26 @@ class CustomerOrder {
     /// 更新时间
     var updateTime: String?
     
-    
+//    init(dict: [String: AnyObject]) {
+//        id = dict["id"] as? Int
+//        applyByStagesTime = dict["applyByStagesTime"] as? String
+//        createTime = dict["createTime"] as? String
+//        customerId = dict["customerId"] as? Int
+//        customerOrderDetails = dict["customerOrderDetails"] as? [CustomerOrderDetails]
+//        isByStages = dict["isByStages"] as? Bool
+//        loanAmount = dict["loanAmount"] as? Float
+//        numberOfPeriods = dict["numberOfPeriods"] as? Int
+//        orderNum = dict["orderNum"] as? String
+//        orderState = dict["orderState"] as? Int
+//        repaymentAmount = dict["repaymentAmount"] as? Float
+//        returnAmount = dict["returnAmount"] as? Float
+//        serviceCharge = dict["serviceCharge"] as? Float
+//        termOfLoan = dict["termOfLoan"] as? Int
+//        updateTime = dict["updateTime"] as? String
+//    }
 }
 
+/// 订单详情model～
 class CustomerOrderDetails {
     
     var id: Int?
@@ -110,4 +129,17 @@ class CustomerOrderDetails {
     
     /// 更新时间
     var updateTime: String?
+    
+//    init(dict: [String: AnyObject]) {
+//        id = dict["id"] as? Int
+//        amountOfRepaymentPerInstalment = dict["amountOfRepaymentPerInstalment"] as? Float
+//        createTime = dict["createTime"] as? String
+//        numberOfPeriods = dict["numberOfPeriods"] as? Int
+//        orderNum = dict["orderNum"] as? String
+//        repaymentTime = dict["repaymentTime"] as? String
+//        repaymentTimeOfEachPeriod = dict["repaymentTimeOfEachPeriod"] as? String
+//        serviceFeePerTerm = dict["serviceFeePerTerm"] as? Float
+//        tradeNo = dict["tradeNo"] as? String
+//        updateTime = dict["updateTime"] as? String
+//    }
 }

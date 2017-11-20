@@ -29,37 +29,51 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.barTintColor = UIColor(r: 82, g: 158, b: 178)
         UIApplication.shared.statusBarStyle = .lightContent
-        creditLab.countFrom(start: 6123, to: 6543, duration: 1)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        UIApplication.shared.statusBarStyle = .default
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         fetchData()
+        
+        if !isLogin().0 {
+            
+            let string = "已有1250人加入中融秒贷"
+            let ranStr = "1250"
+            let str = NSString(string: string)
+            let range = str.range(of: ranStr)
+            let attriStr = NSMutableAttributedString(string: string)
+            attriStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hexString: "FFC633"), range: range)
+            self.personLab.attributedText = attriStr
+            creditLab.countFrom(start: 8888, to: 10000, duration: 1)
+        }
+
+        /// 表示登录成功在请求数据
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: Notification.Name.Task.loginSuccess, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         if IS_IPhone6_6s_7_8 {
-            
+            loanBtnConstraint.constant = 100
         }
         
         if IS_IPhone6p_6sp_7p_8p {
             cardImgConstraint.constant = 185 + 50
-            personImgConstraint.constant = 80
-            loanBtnConstraint.constant = 80
+            personImgConstraint.constant = 60
+            loanBtnConstraint.constant = 100
         }
-        
         
     }
 
@@ -67,39 +81,42 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
-    deinit {
-        printLog("-----------home已经销毁--------------")
-    }
+
     
     // MARK: - Action
-    
-    /// 消息中心
-    @IBAction func centerInfoAction(_ sender: UIBarButtonItem) {
-        
-//        let loginNav = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginNavigationController") as! UINavigationController
-//        _ = loginNav.viewControllers[0] as! LoginViewController
-//        
-//        self.present(loginNav, animated: true, completion: nil)
-    }
     
     ///  立即借款
     @IBAction func lendAction(_ sender: UIButton) {
         
-        let repay = BorrowViewController()
-        navigationController?.pushViewController(repay, animated: true)
-   
+        // 判断如果没有登录
+        if isLogin().0 {
+            let repay = BorrowViewController()
+            navigationController?.pushViewController(repay, animated: true)
+        }else {
+            let loginNav = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginNavigationController") as! UINavigationController
+            _ = loginNav.viewControllers[0] as! LoginViewController
+            
+            self.present(loginNav, animated: true, completion: nil)
+        }
     }
 }
 
 extension HomeViewController {
     
     fileprivate func setupUI() {
-                
-        JPUSHService.setAlias("18782967728", completion: { (resCode, tags, index) in
+        
+        /// 推送设置别名 制定这个手机号才能推送
+        
+        let tel = "18782967728"
+        
+        JPUSHService.setAlias(tel, completion: { (resCode, tags, index) in
             
             /*
              温馨提示，设置标签别名请注意处理call back结果。
@@ -122,15 +139,7 @@ extension HomeViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        
-        let string = "已有13579人加入中融秒贷"
-        let ranStr = "13579"
-        let str = NSString(string: string)
-        let range = str.range(of: ranStr)
-        let attriStr = NSMutableAttributedString(string: string)
-        attriStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hexString: "FFC633"), range: range)
-        personLab.attributedText = attriStr
-        
+
         creditLab = LCCounterLabel(frame: CGRect.zero, type: .Int)
         cardImage.addSubview(creditLab)
         creditLab.textColor = UIColor.white
@@ -138,7 +147,15 @@ extension HomeViewController {
         
         creditLab.snp.makeConstraints { (make) in
             make.centerX.equalTo(cardImage).offset(40)
-            make.centerY.equalTo(cardImage)
+
+            if IS_IPhone5_5s || IS_IPhone6_6s_7_8 || IS_IPhone_X {
+               make.centerY.equalTo(cardImage).offset(-8)
+            }
+            
+            if IS_IPhone6p_6sp_7p_8p {
+                make.centerY.equalTo(cardImage).offset(-10) // 6sp
+            }
+            
             make.width.equalTo((kScreen_w - 60)/3)
         }
         
@@ -158,79 +175,46 @@ extension HomeViewController {
         //设置其CAGradientLayer对象的frame，并插入view的layer
         gradientLayer.frame = self.view.frame
         view.layer.insertSublayer(gradientLayer, at: 0)
-            
-        
-//        tableView = UITableView(frame: CGRect.zero, style: .plain)
-//        tableView.backgroundColor = UIColor.clear
-//        tableView.tableFooterView = UIView()
-//        view.addSubview(tableView)
-//
-//        cardImg = UIImageView()
-//        tableView.addSubview(cardImg)
-//        cardImg.image = UIImage(named: "home_card")?.withRenderingMode(.automatic)
-//
-      
-//
-//        commitBtn = UIButton()
-//        tableView.addSubview(commitBtn)
-//        commitBtn.cuttingCorner(radius: 10)
-//        commitBtn.backgroundColor = UIColor.white
-//        commitBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-//        commitBtn.setTitle("立即借款", for: .normal)
-//        commitBtn.setTitleColor(UIColor(hexString: "#508fcd"), for: .normal)
-//        commitBtn.addTarget(self, action: #selector(commitAction), for: .touchUpInside)
-//
-//        tableView.snp.makeConstraints { (make) in
-//            make.top.left.bottom.right.equalTo(self.view)
-//        }
-//
-//        if IS_IPhone_X {
-//            cardImg.snp.makeConstraints { (make) in
-//                make.height.equalTo(kScreen_h*0.25)
-//                make.centerX.equalTo(self.view)
-//                make.top.equalTo(40)
-//                make.left.equalTo(self.view).offset(30)
-//                make.right.equalTo(self.view).offset(-30)
-//            }
-//
-//            commitBtn.snp.makeConstraints { (make) in
-//                make.height.equalTo(40)
-//                make.centerX.equalTo(self.view)
-//                make.top.equalTo(kScreen_h - 300)
-//                make.left.equalTo(self.view).offset(35)
-//                make.right.equalTo(self.view).offset(-35)
-//            }
-//
-//        }else {
-//
-//            cardImg.snp.makeConstraints { (make) in
-//                make.height.equalTo(kScreen_h*0.3)
-//                make.centerX.equalTo(self.view)
-//                make.top.equalTo(40)
-//                make.left.equalTo(self.view).offset(30)
-//                make.right.equalTo(self.view).offset(-30)
-//            }
-//
-//            commitBtn.snp.makeConstraints { (make) in
-//                make.height.equalTo(40)
-//                make.centerX.equalTo(self.view)
-//                make.top.equalTo(kScreen_h - 260)
-//                make.left.equalTo(self.view).offset(35)
-//                make.right.equalTo(self.view).offset(-35)
-//            }
-//        }
+
     }
     
-    fileprivate func fetchData() {
+    @objc fileprivate func fetchData() {
         
-        let tel = "18782967728"
-        
-        NetworkTools.fetchMineInfo(tel) { (homeModel) in
+        if isLogin().0 {
             
-            printLog("信用额度---\(String(describing: homeModel.totalAmount))")
-            printLog("用户数---\(String(describing: homeModel.totalPersonNumber))")
-            
+            NetworkTools.fetchMineInfo(isLogin().1) { (homeModel) in
+                
+                printLog("信用额度---\(String(describing: homeModel.totalAmount))")
+                printLog("用户数---\(String(describing: homeModel.totalPersonNumber))")
+                
+                DispatchQueue.main.async {
+                    
+                    var per = ""
+                    
+                    if let person = homeModel.totalPersonNumber {
+                        per = "\(12500 + person)"
+                    }else{
+                        per = "12500"
+                    }
+                    
+                    let string = "已有\(per)人加入中融秒贷"
+                    let ranStr = per
+                    let str = NSString(string: string)
+                    let range = str.range(of: ranStr)
+                    let attriStr = NSMutableAttributedString(string: string)
+                    attriStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hexString: "FFC633"), range: range)
+                    self.personLab.attributedText = attriStr
+                    
+                    if homeModel.totalAmount != nil {
+                        self.creditLab.countFrom(start: 6123 + homeModel.totalAmount!, to: 6543 + homeModel.totalAmount!, duration: 1)
+                    }else{
+                        self.creditLab.countFrom(start: 2500, to: 3000, duration: 1)
+                    }
+                    
+                }
+            }
         }
+        
     }
     
    

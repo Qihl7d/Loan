@@ -24,8 +24,8 @@ class BorrowViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        selectIndex = 1
-        collectionView.reloadData()
+//        selectIndex = 1
+//        collectionView.reloadData()
     }
     
     override func viewDidLoad() {

@@ -12,11 +12,16 @@ import UIKit
 class BillDetailViewController: UIViewController {
 
     fileprivate var repayBtn: UIButton! // 立即还款
+    fileprivate var orderModel: CustomerOrder = CustomerOrder()
+    
     var titleString: String?
+    var orderString: String? // 订单编号
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        fetchData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +87,26 @@ extension BillDetailViewController {
         
     }
     
+    fileprivate func fetchData() {
+        
+        if let order = orderString {
+            
+            printLog("订单编号----\(order)")
+            
+            NetworkTools.fetchRepayRecord(order, complete: { [weak self] (orderDetailData) in
+                self?.orderModel = orderDetailData
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+
+            })
+        }else {
+            self.orderModel = CustomerOrder()
+        }
+        
+    }
+    
     @objc func paymentAction() {
         let paymentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
         navigationController?.pushViewController(paymentVC, animated: true)
@@ -91,16 +116,22 @@ extension BillDetailViewController {
 extension BillDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + 2
+        if let order = orderModel.customerOrderDetails?.count {
+            return order + 1
+        }else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillsOneCell", for: indexPath) as! BillsOneCell
+            cell.orderModel = self.orderModel
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillsDetailCell", for: indexPath) as! BillsDetailCell
+            cell.orderDetailModel = self.orderModel.customerOrderDetails?[indexPath.row - 1]
             return cell
         }
 

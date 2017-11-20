@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         printLog("window----\(String(describing: window?.frame))")
         
         // 提前注册一个VersionCode 的 NSUserDefaults
-        let dict: [String: Any] = [logigSuccess: false]
+        let dict: [String: Any] = [logigSuccess: "0"] // 0： 表示没有登录
         UserDefaults.standard.register(defaults: dict)
         
         // 美洽客服服务
@@ -105,6 +105,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //App 进入后台时，关闭美洽服务
     func applicationDidEnterBackground(_ application: UIApplication) {
         MQManager.closeMeiqiaService()
+        
+        UIApplication.shared.beginBackgroundTask {
+            print("程序进入后台，然后再杀死程序")
+            
+            /// 注销本地登录保存的信息
+            UserDefaults.standard.set("0", forKey: logigSuccess)
+            UserDefaults.standard.synchronize()
+        }
     }
 
     //App 进入前台时，开启美洽服务
@@ -122,8 +130,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
+    /// 程序即将推出
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        /// 注销本地登录保存的信息
+        UserDefaults.standard.set("0", forKey: logigSuccess)
+        UserDefaults.standard.synchronize()
+        
+        printLog("longin---\(isLogin())")
     }
 
 

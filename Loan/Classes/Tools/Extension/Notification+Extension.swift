@@ -18,7 +18,7 @@ extension  Notification.Name {
 
 extension Notification.Name {
     public struct Task {
-        public static let xxx = Notification.Name(rawValue: "xxx")
+        public static let loginSuccess = Notification.Name(rawValue: "loginSuccess")
     }
     
     

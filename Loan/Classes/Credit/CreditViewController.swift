@@ -45,6 +45,8 @@ class CreditViewController: UIViewController {
     fileprivate var ContactsData: [AddressBookModel] = []
     fileprivate var contents = [Any]() // 通讯录信息
     
+    fileprivate var creditModel: CreditModel? // 信用model
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -59,11 +61,25 @@ class CreditViewController: UIViewController {
         setupUI()
         saveAddress()
         fetchData()
+        
+        if !isLogin().0 {
+            /// 只是现实额度 并进行动画
+            creditLab.countFrom(start: 350, to: 550, duration: 3)
+//            setdashBoardView()
+            setLayer()
+        }
+
+        /// 表示登录成功在请求数据
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: Notification.Name.Task.loginSuccess, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     // MARK: - Action
@@ -102,17 +118,59 @@ class CreditViewController: UIViewController {
     
     /// 个人认证
     @IBAction func personApprove(_ sender: UIButton) {
+        
+        if creditModel?.isTelAuthentication == false {
+            showMsg("请先完成银行卡认证")
+            return
+        }
         printLog("个人认证")
     }
     
     /// 芝麻认证
     @IBAction func zhimaApprove(_ sender: UIButton) {
+        
+        if creditModel?.isTelAuthentication == false {
+            showMsg("请先完成银行卡认证")
+            return
+        }
+        
+        if creditModel?.isFaceRecognition == false {
+            showMsg("请先完成个人信息认证")
+            return
+        }
+        
         printLog("芝麻认证")
     }
     
     /// 运营商认证
     @IBAction func operatorApporve(_ sender: UIButton) {
+        
+        if creditModel?.isTelAuthentication == false {
+            showMsg("请先完成银行卡认证")
+            return
+        }
+        
+        if creditModel?.isFaceRecognition == false {
+            showMsg("请先完成个人信息认证")
+            return
+        }
+        
+        if creditModel?.isSesameCredit == false {
+           showMsg("请先完成个人信息认证")
+            return
+        }
+        
         printLog("运营商认证")
+    }
+    
+    fileprivate func showMsg(_ text: String) {
+        let alertController = UIAlertController(title: "",
+                                                message: text,
+                                                preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title:"确定", style: .default, handler:nil)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     
@@ -157,7 +215,7 @@ extension CreditViewController {
         
         creditStrLab = UILabel()
         creditView.addSubview(creditStrLab)
-        creditStrLab.text = "信用极好"
+        creditStrLab.text = "信用优"
         creditStrLab.textColor = UIColor(hexString: "FFC832")
         creditStrLab.font = UIFont.systemFont(ofSize: 12)
         
@@ -172,6 +230,17 @@ extension CreditViewController {
         }
     }
     
+    fileprivate func setLayer() {
+        
+        let layRect = CGRect(x: 0, y: 0, width: kScreen_w, height: kScreen_h*0.4)
+        
+        printLog("-------\(layRect)")
+        
+        
+        let lay = LayView(frame: layRect, endAngle: CGFloat(20/180.0*Double.pi))
+        self.creditView.addSubview(lay)
+        lay.setAnimated()
+    }
     
     fileprivate func setdashBoardView() {
         
@@ -372,30 +441,41 @@ extension CreditViewController {
         printLog("通讯录-----\(contents)")
     }
     
-    fileprivate func fetchData() {
+    @objc fileprivate func fetchData() {
         
-        let tel = "18782967728"
-        
-        NetworkTools.fetchCreditInfo(tel) { (creditModel) in
+        if isLogin().0 {
             
-            let model = creditModel
-            
-            DispatchQueue.main.async {
-                self.setupData(creditModel)
+            NetworkTools.fetchCreditInfo(isLogin().1) { (creditModel) in
+                
+                /// 用户判断用户认证了那些选项
+                self.creditModel = creditModel
+                
+                DispatchQueue.main.async {
+                    self.setupData(creditModel)
+                }
+                
             }
-            printLog("信用额度分----\(String(describing: model.creditScore))")
-            
         }
-        
     }
     
     fileprivate func setupData(_ model: CreditModel) {
         
-        let start = model.creditScore! + 350
-        let end = model.creditScore! + 550
+        var startNum: Int = 0
+        var endNum: Int = 0
+        
+        /// 预防得到nil 程序闪退
+        if let start = model.creditScore {
+            startNum = start + 350
+            endNum = start + 550
+            printLog("信用额度分----\(start)")
+        }else {
+            startNum = 350
+            endNum = 550
+            
+        }
         
         /// 只是现实额度 并进行动画
-        creditLab.countFrom(start: start.float, to: end.float, duration: 3)
+        creditLab.countFrom(start: startNum.float, to: endNum.float, duration: 3)
         setdashBoardView()
         
         bankApproveImg.image = model.isCardAuthentication == true ? UIImage(named: "credit_approve") : UIImage(named: "credit_unapprove")

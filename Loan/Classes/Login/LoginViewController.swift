@@ -136,21 +136,25 @@ class LoginViewController: UIViewController {
         NetworkTools.loginAccount(tel) { (flag, msg) in
             
             printLog("登录返回消息----\(msg)")
-            // 表示该手机号码已注册，并且直接登录成功
+            
             if flag {
                 
-                UserDefaults.standard.set(true, forKey: logigSuccess)
+                UserDefaults.standard.set(self.phoneTF.text!, forKey: logigSuccess)
                 UserDefaults.standard.synchronize()
                 
-                let isLogin = UserDefaults.standard.bool(forKey: logigSuccess)
-                // 表示已经登录
-                if isLogin {
-                  printLog("UserDefaults-------注册成功")
-                }
-                
+                /// 发通知请求数据
+                NotificationCenter.default.post(name: Notification.Name.Task.loginSuccess,
+                                                object: nil,
+                                                userInfo: nil)
                 DispatchQueue.main.async {
                     MBProgressHUD.showMessage("登录成功", toView: keyView)
-                    //                self.dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            }else {
+                    
+                DispatchQueue.main.async {
+                    MBProgressHUD.showMessage(msg, toView: self.view)
                 }
             }
             

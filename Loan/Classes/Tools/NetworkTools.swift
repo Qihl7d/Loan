@@ -105,8 +105,144 @@ class NetworkTools {
 // MARK: -客服订单信息
 extension NetworkTools {
     
+    /// 根据订单编号查看借款记录详情（还款时间为空则表示已经还款）
+    class func fetchRepayRecord(_ orderNun: String, complete: @escaping (_ value: CustomerOrder) -> Void) {
+        request(loadDetailInfo + orderNun, type: .post) { (flag, result) in
+            guard flag == true else {
+                return
+            }
+            
+            // 直接解析
+            let json = JSON(result)
+            printLog("根据订单编号查看借款记录详情---\(json)")
+            let isSuccess = json["isSuccess"].boolValue
+            let rows = json["rows"].dictionaryObject
+            
+            if isSuccess {
+                
+                if let row = rows {
+                    let model = CustomerOrder() // 订单详情
+                    
+                    model.id = row["id"] as? Int
+                    model.applyByStagesTime = row["applyByStagesTime"] as? String
+                    model.createTime = row["createTime"] as? String
+                    //                    model.customerId = rows!["customerId"] as? Int // 涉及紧急人联系方式
+                    model.isByStages = row["isByStages"] as? Bool
+                    model.loanAmount = row["loanAmount"] as? Float
+                    model.numberOfPeriods = row["numberOfPeriods"] as? Int
+                    model.orderNum = row["orderNum"] as? String
+                    model.orderState = row["orderState"] as? Int
+                    model.repaymentAmount = row["repaymentAmount"] as? Float
+                    model.returnAmount = row["returnAmount"] as? Float
+                    model.serviceCharge = row["serviceCharge"] as? Float
+                    model.termOfLoan = row["termOfLoan"] as? Int
+                    model.updateTime = row["updateTime"] as? String
+                    
+                    /// 账单详情列表
+                    let customerOrderDetails  = row["customerOrderDetails"] as? [[String: Any]] // 字典数组
+                    
+                    if let customOrder = customerOrderDetails {
+                     
+                        if customOrder.count > 0 {
+                            
+                            var orderDetails = [CustomerOrderDetails]()
+                            
+                            for item in customOrder {
+                                
+                                let detailModel = CustomerOrderDetails()
+                                detailModel.id = item["id"] as? Int
+                                detailModel.amountOfRepaymentPerInstalment = item["amountOfRepaymentPerInstalment"] as? Float
+                                detailModel.createTime = item["createTime"] as? String
+                                detailModel.numberOfPeriods = item["numberOfPeriods"] as? Int
+                                detailModel.orderNum = item["orderNum"] as? String
+                                detailModel.repaymentTime = item["repaymentTime"] as? String
+                                detailModel.repaymentTimeOfEachPeriod = item["repaymentTimeOfEachPeriod"] as? String
+                                detailModel.serviceFeePerTerm = item["serviceFeePerTerm"] as? Float
+                                detailModel.tradeNo = item["tradeNo"] as? String
+                                detailModel.updateTime = item["updateTime"] as? String
+                                
+                                orderDetails.append(detailModel)
+                            }
+                            
+                            model.customerOrderDetails = orderDetails
+                            
+                        }else {
+                            model.customerOrderDetails = []
+                        }
+                        
+                    }
+                    complete(model)
+                }
+            }
+        }
+    }
+    
+    /// 根据客户id查看借款记录
+    class func fetchRepayLocord(_ customerId: Int, complete: @escaping (_ value: [RepayModel]) -> Void) {
+        request(loadRecordInfo + "\(customerId)", type: .post) { (flag, result) in
+            guard flag == true else {
+                return
+            }
+            
+            // 直接解析
+            let json = JSON(result)
+            printLog("根据客户id查看借款记录---\(json)")
+            let isSuccess = json["isSuccess"].boolValue
+            let rows = json["rows"].arrayObject
+            
+            if isSuccess {
+                
+                if let data = rows {
+                    
+                    var repayArray = [RepayModel]()
+                    guard data.count > 0 else {
+                        complete(repayArray)
+                        return
+                    }
+                    
+                    for item in data {
+                        let model = RepayModel(dict: item as! [String: AnyObject])
+                        repayArray.append(model)
+                    }
+                    complete(repayArray)
+                }
+            }
+            
+        }
+    }
+    
+    /// 申请借款信息
+    class func applyLoadInfo(_ params: [String: Any], complete: @escaping (_ value: Bool) -> Void) {
+        
+        var param = [String: Any]()
+        param["customerId"] = "2"  // 客户id string
+        param["loanAmount"] = 500  // 借款金额 double
+        param["termOfLoan"] = "7天" // 借款期限 string
+        param["isByStages"] = false // 是否分期
+        param["numberOfPeriods"] = 3 // 分期周期 int
+        param["applyByStagesTime"] = "date-time" // 申请分期时间
+        
+        request(applyLoanInfo, type: .post) { (flag, result) in
+            guard flag == true else {
+                return
+            }
+            
+            // 直接解析
+            let json = JSON(result)
+            printLog("申请借款信息---\(json)")
+            let isSuccess = json["isSuccess"].boolValue
+            let rows = json["rows"].dictionaryObject
+            
+            if isSuccess {
+                complete(true)
+            }else{
+                complete(false)
+            }
+        }
+    }
+    
     /// 还款界面(获取本期该还款多少)
-    class func repayAmount(_ customerId: Int, complete: @escaping (_ value: Int) -> Void) {
+    class func repayAmount(_ customerId: Int, complete: @escaping (_ value: Float) -> Void) {
         
         request(repayInfo + "\(customerId)", type: .post) { (flag, result) in
             guard flag == true else {
@@ -120,7 +256,7 @@ extension NetworkTools {
             let rows = json["rows"].dictionaryObject
             
             if code == 200, let data = rows {
-                let model = data["repaymentAggregateMoney"] as! Int
+                let model = data["repaymentAggregateMoney"] as! Float
                 complete(model)
             }
         }
@@ -137,6 +273,11 @@ extension NetworkTools {
 
 // MARK: -客服基本信息管理
 extension NetworkTools {
+    
+    /// 根据客户电话号码获取客户基本信息
+    class func fetchCustomerInfo(_ tel: String, complete: @escaping (_ value: HomeModel) -> Void) {
+        
+    }
     
     /// 首页和我的界面信息
     class func fetchMineInfo(_ tel: String, complete: @escaping (_ value: HomeModel) -> Void) {
@@ -178,10 +319,10 @@ extension NetworkTools {
             let isSuccess = json["isSuccess"].boolValue
             let rows = json["rows"].dictionaryObject
             
-            if isSuccess {
-                let model = CreditModel(dict: rows! as [String: AnyObject])
-                complete(model)
-            }
+//            if isSuccess {
+//                let model = CreditModel(dict: rows! as [String: AnyObject])
+//                complete(model)
+//            }
         }
     }
     

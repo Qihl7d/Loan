@@ -16,7 +16,7 @@ extension MBProgressHUD {
         hud.mode = .text
         hud.label.text = mes
         hud.removeFromSuperViewOnHide = true  // 隐藏时候从父控件中移除
-        hud.hide(animated: true, afterDelay: 2.0)
+        hud.hide(animated: true, afterDelay: 1.5)
     }
     
     

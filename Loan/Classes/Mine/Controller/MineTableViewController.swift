@@ -14,6 +14,8 @@ class MineTableViewController: UITableViewController {
         super.viewDidLoad()
         setupUI()
         fetchData()
+        /// 表示登录成功在请求数据
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: Notification.Name.Task.loginSuccess, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +26,10 @@ class MineTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     fileprivate func setupUI() {
@@ -40,16 +46,19 @@ class MineTableViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = UIColor.white 
     }
     
-    fileprivate func fetchData() {
+    @objc fileprivate func fetchData() {
         
-        let tel = "18782967728"
-        
-        NetworkTools.fetchMineInfo(tel) { (homeModel) in
+        /// 表示必须要登录后才能请求数据
+        if isLogin().0 {
             
-            printLog("信用额度---\(String(describing: homeModel.totalAmount))")
-            printLog("用户数---\(String(describing: homeModel.totalPersonNumber))")
-            
+            NetworkTools.fetchMineInfo(isLogin().1) { (homeModel) in
+                
+                printLog("信用额度---\(String(describing: homeModel.totalAmount))")
+                printLog("用户数---\(String(describing: homeModel.totalPersonNumber))")
+                
+            }
         }
+ 
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -223,8 +223,8 @@
                                     <constraint firstAttribute="height" constant="0.5" id="qjq-7c-zmL"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实际到账" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7z-ig-Hvg">
-                                <rect key="frame" x="15" y="18" width="57.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 费用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7z-ig-Hvg">
+                                <rect key="frame" x="15" y="18" width="32.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -236,13 +236,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="借款利息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJs-y6-Fr2">
-                                <rect key="frame" x="85" y="42" width="57.5" height="17"/>
+                                <rect key="frame" x="60" y="42" width="57.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务费" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjX-GM-P0P">
-                                <rect key="frame" x="85" y="67" width="43" height="17"/>
+                                <rect key="frame" x="60" y="67" width="43" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -367,6 +367,17 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="interestLab" destination="Kjn-1w-Yof" id="tEj-z8-bL0"/>
+                <outlet property="loanAmountLab" destination="4U2-z1-ede" id="JDI-ho-l0r"/>
+                <outlet property="loanTimeLab" destination="T0N-7g-VuI" id="XKh-Q4-eGR"/>
+                <outlet property="numberOfPeriodsLab" destination="p5l-Qz-I4R" id="4fI-s8-0xj"/>
+                <outlet property="orderNumLab" destination="i1H-Gm-shF" id="iet-So-GTt"/>
+                <outlet property="realMoneyLab" destination="gZd-gg-Nde" id="V5f-61-UtO"/>
+                <outlet property="repayMoneyLab" destination="rVC-Fs-brm" id="Cx8-tm-hqL"/>
+                <outlet property="serviceChargeLab" destination="dRJ-yG-j1B" id="sqc-cO-4pE"/>
+                <outlet property="termOfLoanLab" destination="yrg-M2-3Dz" id="b7O-zC-5nu"/>
+            </connections>
             <point key="canvasLocation" x="-108.5" y="-42"/>
         </tableViewCell>
     </objects>

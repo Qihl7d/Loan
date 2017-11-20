@@ -29,7 +29,6 @@ let kScreen_h = UIScreen.main.bounds.size.height
  */
 
 
-
 /// 设计屏幕适配
 let IS_IPhone5_5s:         Bool = kScreen_h == 568 ? true : false
 let IS_IPhone6_6s_7_8:     Bool = kScreen_h == 667 ? true : false
@@ -44,6 +43,18 @@ func printLog<T>(_ message: T,logError: Bool = false,file: String = #file,method
         #if DEBUG
             print("[\((file as NSString).lastPathComponent)-第\(line)行-\(method)]: \(message)")
         #endif
+    }
+}
+
+/// 判断用户是否登录
+func isLogin() -> (Bool, String) {
+    
+    let isLogin = UserDefaults.standard.string(forKey: logigSuccess)
+    // 表示已经登录
+    if isLogin != "0" {
+        return (true, isLogin!)
+    }else {
+        return (false, "0")
     }
 }
 
@@ -106,5 +117,5 @@ let repayInfo = baseUrl + "customerOrder/repaymentInterface/"
 /// 根据客户id查看借款记录
 let loadRecordInfo = baseUrl + "customerOrder/repaymentRecord/"
 /// 根据订单编号查看借款详情(还款时间为空则表示已经还款)
-let loadDetailInfo = baseUrl + "customerOrder/repaymentRecord/"
+let loadDetailInfo = baseUrl + "customerOrder/findCustomerOrderByOrderNum/"
 

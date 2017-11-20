@@ -44,6 +44,8 @@
 		8BB054711FB6946500513811 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB054701FB6946500513811 /* PaymentViewController.swift */; };
 		8BB054731FB6DCE400513811 /* RepayBillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB054721FB6DCE400513811 /* RepayBillsViewController.swift */; };
 		8BB054751FB6E0A200513811 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB054741FB6E0A200513811 /* HelpViewController.swift */; };
+		8BB30EDB1FC26B5800520D6F /* WaitRepayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB30EDA1FC26B5800520D6F /* WaitRepayCell.swift */; };
+		8BB30EFF1FC2CBE200520D6F /* LayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB30EFE1FC2CA4500520D6F /* LayView.swift */; };
 		8BD057201FBEB45500CFF0CB /* StringPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD0571F1FBEB45500CFF0CB /* StringPickerView.swift */; };
 		8BD2AACF1FBBD75A00AD05A1 /* MBProgressHUD+HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2AACE1FBBD75A00AD05A1 /* MBProgressHUD+HUD.swift */; };
 		8BD2AAD11FBBF4B000AD05A1 /* MineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2AAD01FBBF4B000AD05A1 /* MineModel.swift */; };
@@ -123,6 +125,8 @@
 		8BB054701FB6946500513811 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		8BB054721FB6DCE400513811 /* RepayBillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepayBillsViewController.swift; sourceTree = "<group>"; };
 		8BB054741FB6E0A200513811 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		8BB30EDA1FC26B5800520D6F /* WaitRepayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitRepayCell.swift; sourceTree = "<group>"; };
+		8BB30EFE1FC2CA4500520D6F /* LayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayView.swift; sourceTree = "<group>"; };
 		8BD0571F1FBEB45500CFF0CB /* StringPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringPickerView.swift; sourceTree = "<group>"; };
 		8BD2AACE1FBBD75A00AD05A1 /* MBProgressHUD+HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+HUD.swift"; sourceTree = "<group>"; };
 		8BD2AAD01FBBF4B000AD05A1 /* MineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineModel.swift; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 				8BB054671FB5874400513811 /* BillsOneCell.xib */,
 				8BB0546A1FB58FBE00513811 /* BillsDetailCell.swift */,
 				8BB0546B1FB58FBE00513811 /* BillsDetailCell.xib */,
+				8BB30EDA1FC26B5800520D6F /* WaitRepayCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 		8BD633831FB1A60C001B9200 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8BB30EFE1FC2CA4500520D6F /* LayView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -632,7 +638,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BB30EFF1FC2CBE200520D6F /* LayView.swift in Sources */,
 				8BF414B21FB2FC9600FA11DA /* AddSuccessViewController.swift in Sources */,
+				8BB30EDB1FC26B5800520D6F /* WaitRepayCell.swift in Sources */,
 				8BAA08E81FBA88BB007142F1 /* BankCollectionCell.swift in Sources */,
 				8BD6336B1FB1687E001B9200 /* NetworkTools.swift in Sources */,
 				8BF414891FB2B5F200FA11DA /* CardCell.swift in Sources */,
@@ -829,7 +837,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Loan/Loan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Lan (2M8FL34CXY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Wanzhuanshenghuo Technology Co., Ltd (7DMKVRZF28)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7DMKVRZF28;
 				INFOPLIST_FILE = Loan/Info.plist;
@@ -837,8 +845,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanle.Loan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e1328e7c-cd77-4c2f-8ab4-f3b3fd84daea";
-				PROVISIONING_PROFILE_SPECIFIER = load_develop;
+				PROVISIONING_PROFILE = "2128332e-d287-4738-bf2c-276636492f93";
+				PROVISIONING_PROFILE_SPECIFIER = load_distribute;
 				SWIFT_OBJC_BRIDGING_HEADER = "Loan/Loan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -853,7 +861,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Loan/Loan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Lan (2M8FL34CXY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Wanzhuanshenghuo Technology Co., Ltd (7DMKVRZF28)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7DMKVRZF28;
 				INFOPLIST_FILE = Loan/Info.plist;
@@ -861,8 +869,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanle.Loan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e1328e7c-cd77-4c2f-8ab4-f3b3fd84daea";
-				PROVISIONING_PROFILE_SPECIFIER = load_develop;
+				PROVISIONING_PROFILE = "ae9b0071-b62f-49a6-81bb-2fe9a7e2c2c9";
+				PROVISIONING_PROFILE_SPECIFIER = load_distribute;
 				SWIFT_OBJC_BRIDGING_HEADER = "Loan/Loan-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

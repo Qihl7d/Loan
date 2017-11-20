@@ -76,7 +76,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-40" y="54"/>
+            <connections>
+                <outlet property="isRepayBtn" destination="rdl-5I-uDc" id="dB9-RA-jhG"/>
+                <outlet property="numberOfPeriodsLab" destination="DnR-g7-CWJ" id="UDD-lo-1H0"/>
+                <outlet property="repayMoneyLab" destination="uet-2w-PLi" id="FSp-U6-OWl"/>
+                <outlet property="repayTimeLab" destination="RTB-Zn-0r9" id="Zc0-hy-UAq"/>
+            </connections>
+            <point key="canvasLocation" x="-123" y="-3"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+/// 信用model
 class CreditModel {
     
     /// 客服id

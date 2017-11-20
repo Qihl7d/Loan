@@ -15,18 +15,18 @@ class HomeModel {
     var customerName: String?
     
     /// 可用额度
-    var availableQuota: Int?
+    var availableQuota: Float?
     
     /// 总额度
-    var totalAmount: Int?
+    var totalAmount: Float?
     
     /// 加入的总人数
     var totalPersonNumber: Int?
     
     init(dict: [String: AnyObject]) {
         customerName = dict["customerName"] as? String
-        availableQuota = dict["availableQuota"] as? Int
-        totalAmount = dict["totalAmount"] as? Int
+        availableQuota = dict["availableQuota"] as? Float
+        totalAmount = dict["totalAmount"] as? Float
         totalPersonNumber = dict["totalPersonNumber"] as? Int
     }
     
