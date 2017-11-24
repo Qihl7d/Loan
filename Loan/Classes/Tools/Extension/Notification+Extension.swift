@@ -19,6 +19,8 @@ extension  Notification.Name {
 extension Notification.Name {
     public struct Task {
         public static let loginSuccess = Notification.Name(rawValue: "loginSuccess")
+        public static let showLogin    = Notification.Name(rawValue: "showLogin") //个人界面显示登录按钮
+
     }
     
     

@@ -10,12 +10,32 @@ import UIKit
 
 class MineTableViewController: UITableViewController {
 
+    /// 头像
+    @IBOutlet weak var headImg: UIImageView!
+    /// 用户名
+    @IBOutlet weak var nameLab: UILabel!
+    /// 可用额度
+    @IBOutlet weak var amountLab: UILabel!
+    
+    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var loginBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         fetchData()
         /// 表示登录成功在请求数据
         NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: Notification.Name.Task.loginSuccess, object: nil)
+        
+        /// 显示登录按钮
+        NotificationCenter.default.addObserver(self, selector: #selector(showLogin), name: Notification.Name.Task.showLogin, object: nil)
+
+    }
+    
+    @objc fileprivate func showLogin() {
+        bgView.isHidden = false
+        
+        printLog("登录按钮已经显示-----0.0")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +51,11 @@ class MineTableViewController: UITableViewController {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    @IBAction func loginAction(_ sender: UIButton) {
+        persentLogin(self)
+    }
+    
 
     fileprivate func setupUI() {
         
@@ -43,7 +68,11 @@ class MineTableViewController: UITableViewController {
         }
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
-        navigationController?.navigationBar.tintColor = UIColor.white 
+        navigationController?.navigationBar.tintColor = UIColor.white
+        
+        // 登录按钮
+        loginBtn.cuttingCorner(radius: 19)
+        loginBtn.setupBorder(width: 2, color: UIColor.white)
     }
     
     @objc fileprivate func fetchData() {
@@ -51,27 +80,66 @@ class MineTableViewController: UITableViewController {
         /// 表示必须要登录后才能请求数据
         if isLogin().0 {
             
-            NetworkTools.fetchMineInfo(isLogin().1) { (homeModel) in
-                
+            bgView.isHidden = true
+            
+            NetworkTools.fetchMineInfo(isLogin().phone) { (homeModel) in
                 printLog("信用额度---\(String(describing: homeModel.totalAmount))")
                 printLog("用户数---\(String(describing: homeModel.totalPersonNumber))")
                 
+                DispatchQueue.main.async {
+                    self.headImg.image = UIImage(named: "mine_head")
+                    self.nameLab.text = isLogin().phone
+                    self.amountLab.text = "可用额度：¥10000"
+                }
             }
+            
+        }else {
+            bgView.isHidden = false
+            
+            // 未登录就现实 请先登录
+            headImg.image = UIImage(named: "mine_head")
+            nameLab.text = "请先登录"
+            amountLab.text = "可用额度：¥10000"
         }
  
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         
+        tableView.deselectRow(at: indexPath, animated: true)
+
+        /// 一下功能需要先登录
+        guard isLogin().0 else {
+            // 先去登录
+            persentLogin(self)
+            return
+        }
+        
+        /// 借款记录
+        if indexPath.row == 1 {
+            performSegue(withIdentifier: "LoanRecordIdentifier", sender: nil)
+        }
+        
+        /// 银行卡管理
+        if indexPath.row == 2 {
+            performSegue(withIdentifier: "BankManagerIdentifier", sender: nil)
+        }
+        
+        /// 帮助中心
+        if indexPath.row == 3 {
+            performSegue(withIdentifier: "HelpCenterIdentifier", sender: nil)
+        }
+        
+        /// 分享app
         if indexPath.row == 4 {
-            
             ShareView.show(frame: UIScreen.main.bounds, selectCallBack: { (index) in
-                
                 printLog("点击了第\(index)个")
-                
             })
-            
+        }
+        
+        /// 设置
+        if indexPath.row == 5 {
+            performSegue(withIdentifier: "SettingIdentifier", sender: nil)
         }
         
     }

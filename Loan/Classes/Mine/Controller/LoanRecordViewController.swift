@@ -11,11 +11,10 @@ import UIKit
 class LoanRecordViewController: UIViewController {
     
     @IBOutlet weak var customBarTop: NSLayoutConstraint!
-    
     @IBOutlet weak var customBarHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var tableView: UITableView!
     
+    var repayArray = [RepayModel]() //
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +23,8 @@ class LoanRecordViewController: UIViewController {
             customBarTop.constant = -44
             customBarHeight.constant = 88
         }
+        
+        fetchData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,21 +34,48 @@ class LoanRecordViewController: UIViewController {
     
     // MARK: - Action
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LoanCellIdentifier" {
+            let destinationVc = segue.destination as! RepayBillsViewController
+            destinationVc.orderString = sender as? String /// 订单编号
+        }
+    }
+    
+    
     @IBAction func backAction(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+  
 
+}
+
+extension LoanRecordViewController {
+    
+    fileprivate func fetchData() {
+        
+        /// 根据客户id查看借款记录
+        
+        NetworkTools.fetchRepayLocord(2) { [weak self] (repayData) in
+            
+            self?.repayArray = repayData
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension LoanRecordViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return repayArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "alreadyRepayCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LoanRecordCell", for: indexPath) as! LoanRecordCell
+        cell.repayModel = repayArray[indexPath.row]
         return cell
     }
     
@@ -57,6 +85,7 @@ extension LoanRecordViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "LoanCellIdentifier", sender: repayArray[indexPath.row].orderNum)
     }
     
 }

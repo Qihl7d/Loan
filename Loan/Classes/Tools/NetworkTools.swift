@@ -73,9 +73,7 @@ class NetworkTools {
         param["customerId"] = 2
         param["communicationName"] = "姓名"
         param["communicationTel"] = "电话号码: 10086"
-        
-        var parameters = [String: Any]()
-        parameters["lists"] = [param,param]
+
         
         Alamofire.request(saveAddressList, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             
@@ -121,21 +119,23 @@ extension NetworkTools {
             if isSuccess {
                 
                 if let row = rows {
+                    
                     let model = CustomerOrder() // 订单详情
                     
                     model.id = row["id"] as? Int
+                    model.orderNum = row["orderNum"] as? String
                     model.applyByStagesTime = row["applyByStagesTime"] as? String
-                    model.createTime = row["createTime"] as? String
-                    //                    model.customerId = rows!["customerId"] as? Int // 涉及紧急人联系方式
+                    model.serviceCharge = row["serviceCharge"] as? Float
+                    model.numberOfPeriods = row["numberOfPeriods"] as? Int
                     model.isByStages = row["isByStages"] as? Bool
                     model.loanAmount = row["loanAmount"] as? Float
-                    model.numberOfPeriods = row["numberOfPeriods"] as? Int
-                    model.orderNum = row["orderNum"] as? String
-                    model.orderState = row["orderState"] as? Int
+                 // model.customerId = rows!["customerId"] as? Int // 涉及紧急人联系方式
+                    // 是否删除
+                    model.termOfLoan = row["termOfLoan"] as? Int
+                    model.createTime = row["createTime"] as? String
                     model.repaymentAmount = row["repaymentAmount"] as? Float
                     model.returnAmount = row["returnAmount"] as? Float
-                    model.serviceCharge = row["serviceCharge"] as? Float
-                    model.termOfLoan = row["termOfLoan"] as? Int
+                    model.orderState = row["orderState"] as? Int
                     model.updateTime = row["updateTime"] as? String
                     
                     /// 账单详情列表
@@ -151,14 +151,17 @@ extension NetworkTools {
                                 
                                 let detailModel = CustomerOrderDetails()
                                 detailModel.id = item["id"] as? Int
-                                detailModel.amountOfRepaymentPerInstalment = item["amountOfRepaymentPerInstalment"] as? Float
-                                detailModel.createTime = item["createTime"] as? String
-                                detailModel.numberOfPeriods = item["numberOfPeriods"] as? Int
                                 detailModel.orderNum = item["orderNum"] as? String
-                                detailModel.repaymentTime = item["repaymentTime"] as? String
-                                detailModel.repaymentTimeOfEachPeriod = item["repaymentTimeOfEachPeriod"] as? String
                                 detailModel.serviceFeePerTerm = item["serviceFeePerTerm"] as? Float
+                                detailModel.repaymentTimeOfEachPeriod = item["repaymentTimeOfEachPeriod"] as? String
+                                detailModel.numberOfPeriods = item["numberOfPeriods"] as? Int
+                                detailModel.repaymentState = item["repaymentState"] as? Int
+                                detailModel.overdueMoney = item["overdueMoney"] as? Float
+                                detailModel.repaymentTime = item["repaymentTime"] as? String
+                                detailModel.createTime = item["createTime"] as? String
                                 detailModel.tradeNo = item["tradeNo"] as? String
+                                detailModel.amountOfRepaymentPerInstalment = item["amountOfRepaymentPerInstalment"] as? Float
+                                detailModel.isOverdue = item["isOverdue"] as? Bool
                                 detailModel.updateTime = item["updateTime"] as? String
                                 
                                 orderDetails.append(detailModel)
@@ -262,13 +265,7 @@ extension NetworkTools {
         }
         
     }
-    
-    
-    
-    
-    
-    
-    
+ 
 }
 
 // MARK: -客服基本信息管理
@@ -319,10 +316,13 @@ extension NetworkTools {
             let isSuccess = json["isSuccess"].boolValue
             let rows = json["rows"].dictionaryObject
             
-//            if isSuccess {
-//                let model = CreditModel(dict: rows! as [String: AnyObject])
-//                complete(model)
-//            }
+            if isSuccess {
+                // 可选绑定
+                if let dict  = rows {
+                    let model = CreditModel(dict: dict as [String: AnyObject])
+                    complete(model)
+                }
+            }
         }
     }
     
@@ -451,8 +451,10 @@ extension NetworkTools {
             
             // 表示登录成功
             if code == 200 {
-                let phone = rows!["customerTel"] as! String
-                complete(true, phone)
+                if let dict = rows {
+                    let customId = dict["id"] as! Int // 客服id
+                    complete(true, "\(customId)")
+                }
             }
             
             // 表示该手机号没注册，我们先进行注册

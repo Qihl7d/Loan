@@ -12,7 +12,7 @@ import UIKit
 class BillDetailViewController: UIViewController {
 
     fileprivate var repayBtn: UIButton! // 立即还款
-    fileprivate var orderModel: CustomerOrder = CustomerOrder()
+    fileprivate var orderModel: CustomerOrder? = nil
     
     var titleString: String?
     var orderString: String? // 订单编号
@@ -76,6 +76,7 @@ extension BillDetailViewController {
         repayBtn.setTitleColor(UIColor.white, for: .normal)
         repayBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         repayBtn.addTarget(self, action: #selector(paymentAction), for: .touchUpInside)
+        repayBtn.isHidden = true
         
         view.addSubview(repayBtn)
         
@@ -94,9 +95,15 @@ extension BillDetailViewController {
             printLog("订单编号----\(order)")
             
             NetworkTools.fetchRepayRecord(order, complete: { [weak self] (orderDetailData) in
+                
                 self?.orderModel = orderDetailData
                 
+                UIView.animate(withDuration: 0.5, animations: {
+                   self?.repayBtn.isHidden = false
+                })
+
                 DispatchQueue.main.async {
+                    
                     self?.tableView.reloadData()
                 }
 
@@ -108,7 +115,7 @@ extension BillDetailViewController {
     }
     
     @objc func paymentAction() {
-        let paymentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
+        let paymentVC = UIStoryboard(name: "Repay", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
         navigationController?.pushViewController(paymentVC, animated: true)
     }
 }
@@ -116,8 +123,8 @@ extension BillDetailViewController {
 extension BillDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let order = orderModel.customerOrderDetails?.count {
-            return order + 1
+        if let order = orderModel {
+            return order.customerOrderDetails!.count + 1
         }else {
             return 0
         }
@@ -131,7 +138,7 @@ extension BillDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillsDetailCell", for: indexPath) as! BillsDetailCell
-            cell.orderDetailModel = self.orderModel.customerOrderDetails?[indexPath.row - 1]
+            cell.orderDetailModel = self.orderModel?.customerOrderDetails?[indexPath.row - 1]
             return cell
         }
 

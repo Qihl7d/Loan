@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qUz-Cb-tcF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--中融秒贷-->
+        <scene sceneID="mCg-zj-X4n">
+            <objects>
+                <viewController id="RAB-dl-AbD" customClass="HomeViewController" customModule="Loan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0iD-2a-1I0"/>
+                        <viewControllerLayoutGuide type="bottom" id="GKs-tt-m4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ScY-QX-j7y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_card_p" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-dJ-MAf">
+                                <rect key="frame" x="15" y="99" width="345" height="185"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="liz-78-GoU"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_headImage" translatesAutoresizingMaskIntoConstraints="NO" id="xZK-HL-7iO">
+                                <rect key="frame" x="45" y="314" width="45" height="45"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_qipao" translatesAutoresizingMaskIntoConstraints="NO" id="6Dg-8f-oYS">
+                                <rect key="frame" x="90" y="323.5" width="204" height="26"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmW-AR-c8n">
+                                <rect key="frame" x="60" y="419" width="255" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tX9-59-P2N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="立即借款">
+                                    <color key="titleColor" red="0.31372549019607843" green="0.5607843137254902" blue="0.80392156862745101" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lendAction:" destination="RAB-dl-AbD" eventType="touchUpInside" id="63s-da-1vw"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_anquan" translatesAutoresizingMaskIntoConstraints="NO" id="fyV-J4-bVi">
+                                <rect key="frame" x="104" y="466" width="14" height="16"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不向学生提供贷款服务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ak0-Y3-itx">
+                                <rect key="frame" x="126" y="467" width="123" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.77647058823529413" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已有12500人加入中融秒贷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hM-40-E35">
+                                <rect key="frame" x="90" y="323.5" width="204" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ak0-Y3-itx" firstAttribute="leading" secondItem="fyV-J4-bVi" secondAttribute="trailing" constant="8" id="6dl-Xs-SOm"/>
+                            <constraint firstItem="ak0-Y3-itx" firstAttribute="top" secondItem="NmW-AR-c8n" secondAttribute="bottom" constant="8" id="DKQ-9u-grK"/>
+                            <constraint firstItem="6Dg-8f-oYS" firstAttribute="centerY" secondItem="xZK-HL-7iO" secondAttribute="centerY" id="J4A-MD-Gb0"/>
+                            <constraint firstItem="NmW-AR-c8n" firstAttribute="top" secondItem="xZK-HL-7iO" secondAttribute="bottom" constant="60" id="Kd3-Sc-E3f"/>
+                            <constraint firstItem="jvs-dJ-MAf" firstAttribute="top" secondItem="0iD-2a-1I0" secondAttribute="bottom" constant="35" id="OTo-nn-hsN"/>
+                            <constraint firstItem="xZK-HL-7iO" firstAttribute="top" secondItem="jvs-dJ-MAf" secondAttribute="bottom" constant="30" id="SaI-HR-0lX"/>
+                            <constraint firstItem="NmW-AR-c8n" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ScY-QX-j7y" secondAttribute="leading" constant="60" id="Sdv-CL-MmT"/>
+                            <constraint firstItem="fyV-J4-bVi" firstAttribute="centerY" secondItem="ak0-Y3-itx" secondAttribute="centerY" id="Tdv-aH-dgp"/>
+                            <constraint firstItem="ak0-Y3-itx" firstAttribute="centerX" secondItem="NmW-AR-c8n" secondAttribute="centerX" id="VBR-CC-YhQ"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="NmW-AR-c8n" secondAttribute="trailing" constant="60" id="WIp-D7-a7G"/>
+                            <constraint firstItem="5hM-40-E35" firstAttribute="leading" secondItem="6Dg-8f-oYS" secondAttribute="leading" id="bfl-gL-zzB"/>
+                            <constraint firstItem="5hM-40-E35" firstAttribute="top" secondItem="6Dg-8f-oYS" secondAttribute="top" id="cVL-5M-t8I"/>
+                            <constraint firstItem="6Dg-8f-oYS" firstAttribute="leading" secondItem="xZK-HL-7iO" secondAttribute="trailing" id="eTD-9g-MTm"/>
+                            <constraint firstAttribute="trailing" secondItem="jvs-dJ-MAf" secondAttribute="trailing" constant="15" id="jS4-Je-Oby"/>
+                            <constraint firstItem="xZK-HL-7iO" firstAttribute="leading" secondItem="jvs-dJ-MAf" secondAttribute="leading" constant="30" id="pb7-ip-ZSp"/>
+                            <constraint firstItem="5hM-40-E35" firstAttribute="bottom" secondItem="6Dg-8f-oYS" secondAttribute="bottom" id="qxs-TG-MCC"/>
+                            <constraint firstItem="5hM-40-E35" firstAttribute="trailing" secondItem="6Dg-8f-oYS" secondAttribute="trailing" id="rWf-yp-0dr"/>
+                            <constraint firstItem="jvs-dJ-MAf" firstAttribute="leading" secondItem="ScY-QX-j7y" secondAttribute="leading" constant="15" id="wMm-nw-8t2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="中融秒贷" id="7Wi-v9-7rJ">
+                        <barButtonItem key="leftBarButtonItem" image="home_mes" id="bde-ZZ-PwU">
+                            <connections>
+                                <action selector="centerInfoAction:" destination="RAB-dl-AbD" id="8EO-Nw-i0P"/>
+                                <segue destination="jOk-H2-NWP" kind="show" id="HuT-iP-CAc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="home_question" id="acc-jX-wkR"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cardImage" destination="jvs-dJ-MAf" id="E9W-cc-Uud"/>
+                        <outlet property="cardImgConstraint" destination="liz-78-GoU" id="lVm-vi-IRJ"/>
+                        <outlet property="loanBtnConstraint" destination="Kd3-Sc-E3f" id="zw3-2z-Sqi"/>
+                        <outlet property="personImgConstraint" destination="SaI-HR-0lX" id="plG-of-rdH"/>
+                        <outlet property="personLab" destination="5hM-40-E35" id="TjG-4g-fAi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6D-TY-dNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="-827.13643178410803"/>
+        </scene>
+        <!--消息中心-->
+        <scene sceneID="ZXY-IV-dFr">
+            <objects>
+                <viewController id="jOk-H2-NWP" customClass="MsgCenterViewController" customModule="Loan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jnC-sH-etT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Chu-aX-t8Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="myN-oZ-5b2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bcy-zx-gum">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MsgCenterCell" id="Hha-ol-Z8G" customClass="MsgCell" customModule="Loan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hha-ol-Z8G" id="b75-Qo-bsi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="编号 23466666已经通过审批" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgp-2n-Q9e">
+                                                    <rect key="frame" x="15" y="15" width="345" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLI-Sd-BBq">
+                                                    <rect key="frame" x="15" y="43.5" width="360" height="0.5"/>
+                                                    <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.5" id="vkf-NU-LJa"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sgp-2n-Q9e" firstAttribute="top" secondItem="b75-Qo-bsi" secondAttribute="top" constant="15" id="175-Tl-YHH"/>
+                                                <constraint firstItem="Sgp-2n-Q9e" firstAttribute="leading" secondItem="b75-Qo-bsi" secondAttribute="leading" constant="15" id="8fH-Xj-z4R"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sgp-2n-Q9e" secondAttribute="trailing" constant="15" id="IcF-0P-S7Y"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sgp-2n-Q9e" secondAttribute="bottom" constant="15" id="KpL-xv-SsF"/>
+                                                <constraint firstAttribute="trailing" secondItem="dLI-Sd-BBq" secondAttribute="trailing" id="fzU-zk-Nz1"/>
+                                                <constraint firstItem="dLI-Sd-BBq" firstAttribute="leading" secondItem="b75-Qo-bsi" secondAttribute="leading" constant="15" id="loM-bA-qDf"/>
+                                                <constraint firstAttribute="bottom" secondItem="dLI-Sd-BBq" secondAttribute="bottom" id="pCt-bN-iw3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="msgLab" destination="Sgp-2n-Q9e" id="0Ow-ZI-3S4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jOk-H2-NWP" id="2gV-tm-vK1"/>
+                                    <outlet property="delegate" destination="jOk-H2-NWP" id="oLc-Y9-nMI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bcy-zx-gum" secondAttribute="trailing" id="51L-gq-wTT"/>
+                            <constraint firstItem="bcy-zx-gum" firstAttribute="leading" secondItem="myN-oZ-5b2" secondAttribute="leading" id="9zb-BR-0UD"/>
+                            <constraint firstItem="bcy-zx-gum" firstAttribute="top" secondItem="jnC-sH-etT" secondAttribute="bottom" id="zHf-wV-cwT"/>
+                            <constraint firstItem="Chu-aX-t8Q" firstAttribute="top" secondItem="bcy-zx-gum" secondAttribute="bottom" id="znI-kL-5zg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="消息中心" id="VQb-6m-4Xy"/>
+                    <connections>
+                        <outlet property="tableView" destination="bcy-zx-gum" id="mlJ-93-8fQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mtA-6Y-6Qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="-827"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="vc7-eK-Enu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qUz-Cb-tcF" customClass="LCNavigationController" customModule="Loan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar_borrow" selectedImage="tabbar_borrow_h" id="ZhM-iO-dZU">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QEY-eE-b9b">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RAB-dl-AbD" kind="relationship" relationship="rootViewController" id="SdW-oH-DI8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3JB-dC-P2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="-827"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home_anquan" width="14" height="16"/>
+        <image name="home_card_p" width="305" height="185"/>
+        <image name="home_headImage" width="45" height="45"/>
+        <image name="home_mes" width="22" height="22"/>
+        <image name="home_qipao" width="204" height="26"/>
+        <image name="home_question" width="22" height="22"/>
+        <image name="tabbar_borrow" width="16" height="19"/>
+        <image name="tabbar_borrow_h" width="16" height="19"/>
+    </resources>
+</document>

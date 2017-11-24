@@ -13,8 +13,6 @@ class LayView: UIView {
     var strokeColor: UIColor = UIColor.white
     var strokeWidth: CGFloat = 5
     
-    var creditLab: LCCounterLabel!  // 额度 20000
-    
     //将角度转为弧度
     func angleToRadian(_ angle: Double)->CGFloat {
         return CGFloat(angle/Double(180.0) * Double.pi)
@@ -30,6 +28,8 @@ class LayView: UIView {
     var iamgeView: UIImageView! // 外圈亮点光标
     var arrowImage: UIImageView! // 箭头img
     
+    var duration: Double = 1.5  // 动画时长
+    
     struct Constant {
         //进度条宽度
         static let lineWidth: CGFloat = 10
@@ -43,14 +43,6 @@ class LayView: UIView {
     init(frame: CGRect, endAngle: CGFloat) {
         super.init(frame: frame)
         self.animEnd = endAngle
-        setupUI()
-        
-        creditLab = LCCounterLabel(frame: CGRect.zero, type: .Int)
-        creditLab.center = center
-        addSubview(creditLab)
-        creditLab.textColor = UIColor.orange
-        creditLab.font = UIFont.boldSystemFont(ofSize: 30)
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -101,20 +93,20 @@ class LayView: UIView {
     
     func setAnimated() {
         
-         creditLab.countFrom(start: 350, to: 550, duration: 3)
+        setupUI()
         
         /// 如果存在 就先移除后在动画
-        if iamgeView != nil {
-            iamgeView.removeFromSuperview()
-        }
-        
-        if arrowImage != nil {
-            arrowImage.removeFromSuperview()
-        }
+//        if iamgeView != nil {
+//            iamgeView.removeFromSuperview()
+//        }
+//        
+//        if arrowImage != nil {
+//            arrowImage.removeFromSuperview()
+//        }
         
         // 外圈(显色圈)动画
         let animation=CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = 3
+        animation.duration = duration
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         animation.fromValue = 0
         animation.toValue = 1
@@ -135,7 +127,7 @@ class LayView: UIView {
         orbit1.fillMode = kCAFillModeForwards
         orbit1.rotationMode = kCAAnimationRotateAuto  // 根据路径自动旋转
         orbit1.isRemovedOnCompletion = false  // 是否在动画完成后从 Layer 层上移除  回到最开始状态
-        orbit1.duration = 3
+        orbit1.duration = duration
         orbit1.path = path.cgPath
 
         /// 光标
@@ -154,7 +146,7 @@ class LayView: UIView {
         arrowOrbit.fillMode = kCAFillModeForwards
         arrowOrbit.rotationMode = kCAAnimationRotateAuto  // 根据路径自动旋转
         arrowOrbit.isRemovedOnCompletion = false  // 是否在动画完成后从 Layer 层上移除  回到最开始状态
-        arrowOrbit.duration = 3
+        arrowOrbit.duration = duration
         arrowOrbit.path = arrowPath.cgPath
         
         arrowImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 18/2, height: 28/2))

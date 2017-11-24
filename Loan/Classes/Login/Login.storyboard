@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--登录注册-->
+        <!--登录-->
         <scene sceneID="yEl-RG-Gva">
             <objects>
                 <viewController id="nfs-bp-2Qi" customClass="LoginViewController" customModule="Loan" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,7 +130,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GZa-Be-NEr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="登录注册" id="Mqz-Og-mBl">
+                    <navigationItem key="navigationItem" title="登录" id="Mqz-Og-mBl">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="Vxq-z5-k2Q">
                             <connections>
                                 <action selector="leftBarAction:" destination="nfs-bp-2Qi" id="XTU-6P-hhO"/>

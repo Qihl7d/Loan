@@ -45,10 +45,13 @@ class BillsOneCell: UITableViewCell {
                     loanTimeLab.text = ""
                 }
                 
+                // 借款金额 和 实际到账
                 if let amount = model.loanAmount {
                     loanAmountLab.text = "¥\(amount)"
+                    realMoneyLab.text  = "¥\(amount)"
                 }else {
                     loanAmountLab.text = ""
+                    realMoneyLab.text = ""
                 }
                 
                 if let loanTimes = model.termOfLoan {
@@ -58,15 +61,9 @@ class BillsOneCell: UITableViewCell {
                 }
                 
                 if let period = model.numberOfPeriods {
-                    numberOfPeriodsLab.text = "\(period)"
+                    numberOfPeriodsLab.text = "\(period)期"
                 }else {
-                    numberOfPeriodsLab.text = ""
-                }
-                
-                if let realMoney = model.loanAmount {
-                    realMoneyLab.text = "¥\(realMoney)"
-                }else {
-                    realMoneyLab.text = ""
+                    numberOfPeriodsLab.text = "暂无分期"
                 }
 
                 if let service = model.serviceCharge, let money = model.loanAmount {
@@ -82,7 +79,9 @@ class BillsOneCell: UITableViewCell {
                     repayMoneyLab.text = "¥\(moneyNum)"
   
                 }else {
+                    interestLab.text = ""
                     serviceChargeLab.text = ""
+                    repayMoneyLab.text = ""
                 }   
             }
         }

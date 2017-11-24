@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -448,7 +448,7 @@
 		0884588B5DF59A4079D770BFF47D31A0 /* MQBotMenuAnswerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQBotMenuAnswerCell.h; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellView/MQBotMenuAnswerCell.h"; sourceTree = "<group>"; };
 		08A2C7A6EA05377908E570730232E9C2 /* UIImage+MQGenerate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MQGenerate.m"; path = "Meiqia-SDK-files/MQChatViewController/Categories/UIImage+MQGenerate.m"; sourceTree = "<group>"; };
 		0B3010BDACDB71933C6BC41094313265 /* Meiqia.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Meiqia.xcconfig; sourceTree = "<group>"; };
-		0B4E440E6C3762CCDE96BCBCFFF2FDCF /* VoiceConverter.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = VoiceConverter.mm; path = "Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/VoiceConverter.mm"; sourceTree = "<group>"; };
+		0B4E440E6C3762CCDE96BCBCFFF2FDCF /* VoiceConverter.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = VoiceConverter.mm; path = "Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/VoiceConverter.mm"; sourceTree = "<group>"; };
 		0C0C25EB56230D38AB5D58B428E99DD4 /* MQChatViewConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQChatViewConfig.h; path = "Meiqia-SDK-files/MQChatViewController/Config/MQChatViewConfig.h"; sourceTree = "<group>"; };
 		0C0F98BF81E09174B5459FC81DA2AAC9 /* MQEventMessageCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQEventMessageCell.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellView/MQEventMessageCell.m"; sourceTree = "<group>"; };
 		0CE5EB9C50E4FDEAC8409A5826D18440 /* RequestModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestModifier.swift; path = Sources/RequestModifier.swift; sourceTree = "<group>"; };
@@ -477,16 +477,16 @@
 		1B7BC7EF197294D164BA194BC4A6EF1B /* MQVisialMessageFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQVisialMessageFactory.h; path = "Meiqia-SDK-files/MQChatViewController/MessageModels/MQVisialMessageFactory.h"; sourceTree = "<group>"; };
 		1C4392212A61E149EFE6E990BE10414B /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
 		1C493922DF8685A49FEBF8EB44A19946 /* MQMessageFormImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQMessageFormImageView.h; path = "Meiqia-SDK-files/MQMessageForm/Views/MQMessageFromImageView/MQMessageFormImageView.h"; sourceTree = "<group>"; };
-		1D0418759163E1B8807DCD105BA9093B /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		1D0418759163E1B8807DCD105BA9093B /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		1ED0453129C7011522BD1E641801F902 /* MQMessageFormViewService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQMessageFormViewService.h; path = "Meiqia-SDK-files/MQMessageForm/Controllers/MQMessageFormViewService.h"; sourceTree = "<group>"; };
 		1F1895BB630764D2BCEBAED918061272 /* UIViewController+MQHieriachy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MQHieriachy.m"; path = "Meiqia-SDK-files/MQChatViewController/Categories/UIViewController+MQHieriachy.m"; sourceTree = "<group>"; };
 		1F60B478AFFABBBF563239393D1F3FE5 /* MQPreChatFormViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQPreChatFormViewModel.m; path = "Meiqia-SDK-files/MQChatViewController/Controllers/PreChatForm/MQPreChatFormViewModel.m"; sourceTree = "<group>"; };
 		1F73C742404E6CC42171724F8691C53B /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		2056B23180FC529504613EC0D251B079 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
-		21F2DAA79E1021061DA6A3BAACCD3D4E /* wav.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = wav.mm; path = "Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/amrwapper/wav.mm"; sourceTree = "<group>"; };
+		21F2DAA79E1021061DA6A3BAACCD3D4E /* wav.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = wav.mm; path = "Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/amrwapper/wav.mm"; sourceTree = "<group>"; };
 		2200AE33D6DF21879ED58429527C52BB /* MQBotMenuAnswerCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQBotMenuAnswerCell.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellView/MQBotMenuAnswerCell.m"; sourceTree = "<group>"; };
 		24760136089045FF961D12925FF6778E /* ImageView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageView+Kingfisher.swift"; path = "Sources/ImageView+Kingfisher.swift"; sourceTree = "<group>"; };
-		24C6AC0AA418A4B85C032FE21941A651 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24C6AC0AA418A4B85C032FE21941A651 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24FEEF4346DA3F98D250D03FE4546158 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		2622E6DA27EB55F18132CF0D7BD934E8 /* Meiqia-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Meiqia-dummy.m"; sourceTree = "<group>"; };
 		26F68F7896C64468CECDC5558F37C183 /* MQEmbededWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQEmbededWebView.h; path = "Meiqia-SDK-files/MQChatViewController/Views/MQWebView/MQEmbededWebView.h"; sourceTree = "<group>"; };
@@ -500,7 +500,7 @@
 		29F6AC83B7A17D4852500F6DBB500A67 /* MEIQIA_MLAudioRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MEIQIA_MLAudioRecorder.m; path = "Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/MEIQIA_MLAudioRecorder.m"; sourceTree = "<group>"; };
 		2A1C3F8D71E1BF0909086FE0C4FAA118 /* MQImageUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQImageUtil.m; path = "Meiqia-SDK-files/MQChatViewController/Utils/MQImageUtil.m"; sourceTree = "<group>"; };
 		2AD93E004BA1DA61D07EDEF2268CA9B9 /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Placeholder.swift; sourceTree = "<group>"; };
-		2ADF2C456F98BD49346CF81930850360 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		2ADF2C456F98BD49346CF81930850360 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		2B094C0A354CC71E26B76FE49139A3FD /* MQMessageFormViewStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQMessageFormViewStyle.m; path = "Meiqia-SDK-files/MQMessageForm/Config/Styles/MQMessageFormViewStyle.m"; sourceTree = "<group>"; };
 		2C7D9B4C2A571D7A002C99CAFA50B753 /* MQChatViewStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQChatViewStyle.h; path = "Meiqia-SDK-files/MQChatViewController/Config/Style/MQChatViewStyle.h"; sourceTree = "<group>"; };
 		2CD685882291225975DF9FB4AB9E0DDB /* UIViewController+MQOrientationFix.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MQOrientationFix.m"; path = "Meiqia-SDK-files/MQChatViewController/Categories/UIViewController+MQOrientationFix.m"; sourceTree = "<group>"; };
@@ -509,7 +509,7 @@
 		2F31987D9581D37FEC12740F318F9DA9 /* MQChatRegexUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQChatRegexUtil.m; path = "Meiqia-SDK-files/MQChatViewController/Utils/MQChatRegexUtil.m"; sourceTree = "<group>"; };
 		2F6002AE9611ED8C31932901ED5F8E0B /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		2F64CDFA372AC65C94A1E1378A50F3FF /* MQMessageFormInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQMessageFormInputView.h; path = "Meiqia-SDK-files/MQMessageForm/Views/MQMessageFormInputView/MQMessageFormInputView.h"; sourceTree = "<group>"; };
-		2F79E4DECA4E7152D9AC7237F4BEE1C5 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F79E4DECA4E7152D9AC7237F4BEE1C5 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A407EA85DA0DF17F096C6B28EE8FB8 /* MQVoiceCellModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQVoiceCellModel.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQVoiceCellModel.m"; sourceTree = "<group>"; };
 		30E029B33CD694DE262BF44C0F38D7A7 /* Kingfisher.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.xcconfig; sourceTree = "<group>"; };
 		3170B4A0DB795AB4BE26FED96D34AEB0 /* MQChatViewConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQChatViewConfig.m; path = "Meiqia-SDK-files/MQChatViewController/Config/MQChatViewConfig.m"; sourceTree = "<group>"; };
@@ -520,7 +520,7 @@
 		3709C67D22CA3F1ED871FF3BDBD85EBE /* MEIQIA_FBFontSymbol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEIQIA_FBFontSymbol.h; path = "Meiqia-SDK-files/MQChatViewController/Vendors/FBDigitalFont/MEIQIA_FBFontSymbol.h"; sourceTree = "<group>"; };
 		373C9089AB9C8D34D26C461562362891 /* MQTextCellModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTextCellModel.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQTextCellModel.m"; sourceTree = "<group>"; };
 		37D61BA5BCBFD035F13F6BB4C365A08D /* MQKeyboardController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQKeyboardController.m; path = "Meiqia-SDK-files/MQChatViewController/Views/MCKeyboardController/MQKeyboardController.m"; sourceTree = "<group>"; };
-		38A2CF229CE35DA9C3CC012EDBF514C3 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38A2CF229CE35DA9C3CC012EDBF514C3 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39BC91FA00C76F9630218F47BC1765E4 /* MQImageCellModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQImageCellModel.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQImageCellModel.m"; sourceTree = "<group>"; };
 		39EEBC7CE7652160E2658D0C017C2525 /* MQMessageFormImageCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQMessageFormImageCell.h; path = "Meiqia-SDK-files/MQMessageForm/Views/MQMessageFormImageCell/MQMessageFormImageCell.h"; sourceTree = "<group>"; };
 		3A3C3AAC0485A9A95DD194B724E0518A /* if_rom.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = if_rom.h; path = "Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/include/opencore-amrwb/if_rom.h"; sourceTree = "<group>"; };
@@ -540,12 +540,12 @@
 		413A1304D976C260DE11868970EF49B8 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		41D762A5CC1CE2051AF658646962FF0A /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		42D588114E817DA12A9817F03E604464 /* MQBotAnswerMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQBotAnswerMessage.h; path = "Meiqia-SDK-files/MQChatViewController/MessageModels/MQBotAnswerMessage.h"; sourceTree = "<group>"; };
-		42FA0E0B0CE4DB4D26286C48CA28B9F5 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Kingfisher.modulemap; sourceTree = "<group>"; };
+		42FA0E0B0CE4DB4D26286C48CA28B9F5 /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		44601E3444604204BE932B10929D5ED3 /* UIViewController+MQOrientationFix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MQOrientationFix.h"; path = "Meiqia-SDK-files/MQChatViewController/Categories/UIViewController+MQOrientationFix.h"; sourceTree = "<group>"; };
 		4602A61FD0F0D2E8077F3C5736C5403F /* MQEventCellModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQEventCellModel.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQEventCellModel.m"; sourceTree = "<group>"; };
 		46C9F647B96CEC5F342DA70F723801F1 /* MQBundleUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQBundleUtil.m; path = "Meiqia-SDK-files/MQChatViewController/Utils/MQBundleUtil.m"; sourceTree = "<group>"; };
 		46DA86566B0F853D75A3D1A5AA8F92C6 /* MQBotMenuAnswerCellModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQBotMenuAnswerCellModel.h; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQBotMenuAnswerCellModel.h"; sourceTree = "<group>"; };
-		4720C77B861872A199C97A5F1C76843A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4720C77B861872A199C97A5F1C76843A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		474DABF54F8CC32EC306F2C4FA8D432E /* MQRichTextViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQRichTextViewModel.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQRichTextViewModel.m"; sourceTree = "<group>"; };
 		47CE6A389518BEA9292C4511F081526C /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Sources/Image.swift; sourceTree = "<group>"; };
 		4A0CD717E113378D94B97918C3E3D541 /* MQTextMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQTextMessage.m; path = "Meiqia-SDK-files/MQChatViewController/MessageModels/MQTextMessage.m"; sourceTree = "<group>"; };
@@ -569,7 +569,7 @@
 		53BE6888BA15E6C8E4C126C0D2D5255B /* MQPreChatCells.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQPreChatCells.h; path = "Meiqia-SDK-files/MQChatViewController/Controllers/PreChatForm/MQPreChatCells.h"; sourceTree = "<group>"; };
 		54562675D49476AB0E4CD3B7F5D11C8A /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		563F66B09EEF9F2FF79D4E417FDB2376 /* MQChatEmojize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQChatEmojize.h; path = "Meiqia-SDK-files/MQChatViewController/Utils/MQChatEmojize.h"; sourceTree = "<group>"; };
-		566881372F50E9A905748E964E5ADBC1 /* Pods_Loan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Loan.framework; path = "Pods-Loan.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		566881372F50E9A905748E964E5ADBC1 /* Pods_Loan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		569F399208A2797018A8CE9A6A3CE451 /* MQFileDownloadCellModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQFileDownloadCellModel.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQFileDownloadCellModel.m"; sourceTree = "<group>"; };
 		5859D9FB91FEA87870B29828A3AF361B /* MQWindowUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQWindowUtil.h; path = "Meiqia-SDK-files/MQChatViewController/Utils/MQWindowUtil.h"; sourceTree = "<group>"; };
 		585B8F7C5832A5F8F9D62D701E3E2819 /* MQRecorderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQRecorderView.m; path = "Meiqia-SDK-files/MQChatViewController/Views/MQInputBar/FunctionView/MQRecorderView.m"; sourceTree = "<group>"; };
@@ -588,8 +588,8 @@
 		5F014FA9E452F6010ECC2341BFFE8193 /* MQChatViewStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQChatViewStyle.m; path = "Meiqia-SDK-files/MQChatViewController/Config/Style/MQChatViewStyle.m"; sourceTree = "<group>"; };
 		5F226777371ADC68EF2E58D01C819DDE /* MQBotMenuCellModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQBotMenuCellModel.h; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQBotMenuCellModel.h"; sourceTree = "<group>"; };
 		5F708F5EB725F4A0B37AB348F665A612 /* MQRichTextViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQRichTextViewCell.h; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellView/MQRichTextViewCell.h"; sourceTree = "<group>"; };
-		601A77C62C3D9181D87F9D40E9FEA9E5 /* Pods-Loan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Loan.modulemap"; sourceTree = "<group>"; };
-		605E20F7E070F2B8123AFC210259B51B /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		601A77C62C3D9181D87F9D40E9FEA9E5 /* Pods-Loan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Loan.modulemap"; sourceTree = "<group>"; };
+		605E20F7E070F2B8123AFC210259B51B /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		631317DB02EC124EF263AEF24005A952 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		632C3EC5A8082B29BFFF6A73991D43F8 /* MQEvaluationCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQEvaluationCell.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellView/MQEvaluationCell.m"; sourceTree = "<group>"; };
 		65464AC0E1EB3D2EA72A41C4387F1218 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
@@ -669,7 +669,7 @@
 		906FCF18AAA3C915BA51836BF64F850B /* MQEmbededWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQEmbededWebView.m; path = "Meiqia-SDK-files/MQChatViewController/Views/MQWebView/MQEmbededWebView.m"; sourceTree = "<group>"; };
 		90840CEBE136FB30C8E04D6F6EF577F8 /* MQEvaluationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQEvaluationView.m; path = "Meiqia-SDK-files/MQChatViewController/Views/MQEvaluationView/MQEvaluationView.m"; sourceTree = "<group>"; };
 		92572CA85B3DBD0A7723E8F2C9C95B4E /* MQAGEmojiPageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQAGEmojiPageView.m; path = "Meiqia-SDK-files/MQChatViewController/Vendors/AGEmojiKeyboard/MQAGEmojiPageView.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93BAEAF584523CDE70CE2E8282CD6B4A /* MQTipsCellModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQTipsCellModel.h; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQTipsCellModel.h"; sourceTree = "<group>"; };
 		945642BA884716FFD528C1E53CD9B92B /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		955D4CA9D5E9CE13B4D810B226D16236 /* Pods-Loan-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Loan-resources.sh"; sourceTree = "<group>"; };
@@ -690,7 +690,7 @@
 		9E3B5831875200EDD403891F08598E4F /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		9E45A917725ADB62F8B3A3C67FB1EBD5 /* MQAnimatorPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQAnimatorPush.h; path = "Meiqia-SDK-files/MQChatViewController/Animation/MQAnimatorPush.h"; sourceTree = "<group>"; };
 		9F4B212DA1ABBFDE8F6B4C7495592B5B /* MQKeyboardController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQKeyboardController.h; path = "Meiqia-SDK-files/MQChatViewController/Views/MCKeyboardController/MQKeyboardController.h"; sourceTree = "<group>"; };
-		9FBD2ACA708E759CEE03B80863F630C4 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		9FBD2ACA708E759CEE03B80863F630C4 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
 		A1B3A5D49D792A6E3CC7F18A93362EA2 /* MQServiceToViewInterface.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQServiceToViewInterface.m; path = "Meiqia-SDK-files/MeiqiaSDKViewInterface/MQServiceToViewInterface.m"; sourceTree = "<group>"; };
 		A1D7936613E3E717ED1A58FD2C6705E2 /* Pods-Loan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Loan.release.xcconfig"; sourceTree = "<group>"; };
 		A2F099F6B7CE30A50F41C04538311EEE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
@@ -704,7 +704,7 @@
 		A6733DCF2970960B8AB328CEB3BC5004 /* MQFileDownloadCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQFileDownloadCell.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellView/MQFileDownloadCell.m"; sourceTree = "<group>"; };
 		A742F9B52F407A19A81AD7EC22FBB98F /* MQAssetUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQAssetUtil.m; path = "Meiqia-SDK-files/MQChatViewController/Utils/MQAssetUtil.m"; sourceTree = "<group>"; };
 		A833B780E8EAD1F51042BEAB04F26CB8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		A9F80CDF3DEB0D16AE015A776CA35891 /* Meiqia.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Meiqia.modulemap; sourceTree = "<group>"; };
+		A9F80CDF3DEB0D16AE015A776CA35891 /* Meiqia.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Meiqia.modulemap; sourceTree = "<group>"; };
 		AA6312C6D9C99E5A8EE2D2B39FF4295B /* MQChatViewService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQChatViewService.m; path = "Meiqia-SDK-files/MQChatViewController/Controllers/MQChatViewService.m"; sourceTree = "<group>"; };
 		AA6E98A4803481CFF6B925F16F76D9F1 /* Indicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Indicator.swift; path = Sources/Indicator.swift; sourceTree = "<group>"; };
 		ABAAB20981460EEB6B42ACB3BDDA05A8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
@@ -796,7 +796,7 @@
 		DF84638C2FEF16A24993638B642DEB03 /* MQAssetUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQAssetUtil.h; path = "Meiqia-SDK-files/MQChatViewController/Utils/MQAssetUtil.h"; sourceTree = "<group>"; };
 		E04AD718D68D1F877A2C3E83D78DA74F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E07A2561F9B02BE1ED6A3312AC8918F4 /* Meiqia-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Meiqia-prefix.pch"; sourceTree = "<group>"; };
-		E0B09307322C7DB63B9D86F895B9F059 /* amrFileCodec.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = amrFileCodec.mm; path = "Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/amrwapper/amrFileCodec.mm"; sourceTree = "<group>"; };
+		E0B09307322C7DB63B9D86F895B9F059 /* amrFileCodec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = amrFileCodec.mm; path = "Meiqia-SDK-files/MQChatViewController/Vendors/VoiceConvert/amrwapper/amrFileCodec.mm"; sourceTree = "<group>"; };
 		E14DA83DB0EB9C2642F707319B04EA9C /* MQMessageFormTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQMessageFormTextView.h; path = "Meiqia-SDK-files/MQMessageForm/Views/MQMessageFormTextView/MQMessageFormTextView.h"; sourceTree = "<group>"; };
 		E161A837C7C8C26FB024505B0C9C04A7 /* MQBotAnswerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQBotAnswerCell.h; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellView/MQBotAnswerCell.h"; sourceTree = "<group>"; };
 		E1FEA2C3D138CD8AB9901AF2FF9775ED /* NSError+MQConvenient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+MQConvenient.h"; path = "Meiqia-SDK-files/MQChatViewController/Categories/NSError+MQConvenient.h"; sourceTree = "<group>"; };
@@ -806,7 +806,7 @@
 		E2FCD706844A580BE03A5DB8FA27ED07 /* MQImageMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQImageMessage.m; path = "Meiqia-SDK-files/MQChatViewController/MessageModels/MQImageMessage.m"; sourceTree = "<group>"; };
 		E392FE135C577BDE86FB75E9F2A29105 /* MQBotWebViewBubbleAnswerCellModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQBotWebViewBubbleAnswerCellModel.m; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQBotWebViewBubbleAnswerCellModel.m"; sourceTree = "<group>"; };
 		E3C082508663B8997817DE7C0EE81958 /* MQWebViewBubbleCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQWebViewBubbleCell.h; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellView/MQWebViewBubbleCell.h"; sourceTree = "<group>"; };
-		E3F535AF7F6CC082DFD65E8D867DB0E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3F535AF7F6CC082DFD65E8D867DB0E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49A313F5E2D12B6004EC62033E94BD8 /* MEIQIA_FBSquareFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MEIQIA_FBSquareFont.h; path = "Meiqia-SDK-files/MQChatViewController/Vendors/FBDigitalFont/MEIQIA_FBSquareFont.h"; sourceTree = "<group>"; };
 		E508C70CAE9BAB0CA764E8F3F644FC9C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E5095BA1410446A5E014E4FADE99FC3C /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/KingfisherManager.swift; sourceTree = "<group>"; };
@@ -826,7 +826,7 @@
 		F097F789567D2A817DF541F6F27CC263 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		F10254F45CC4E75D778B98EC13E26483 /* interf_dec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = interf_dec.h; path = "Meiqia-SDK-files/MQChatViewController/Vendors/MLAudioRecorder/amr_en_de/include/opencore-amrnb/interf_dec.h"; sourceTree = "<group>"; };
 		F14D4CA60E13EB90E99F3BD88A6158F8 /* MQFileDownloadMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQFileDownloadMessage.h; path = "Meiqia-SDK-files/MQChatViewController/MessageModels/MQFileDownloadMessage.h"; sourceTree = "<group>"; };
-		F1E8A25E0F8C4FCE6B40A1DF549D144E /* Meiqia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Meiqia.framework; path = Meiqia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1E8A25E0F8C4FCE6B40A1DF549D144E /* Meiqia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Meiqia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F28DC8385FFA04784AFA519C562508D1 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		F2B31762B076C31EAD9320BD5FD0DBEB /* MQInputContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MQInputContentView.m; path = "Meiqia-SDK-files/MQChatViewController/Views/MQInputBar/MQInputContentView/MQInputContentView.m"; sourceTree = "<group>"; };
 		F2B3E3AC41283C4C515E22187691103B /* MQBotWebViewBubbleAnswerCellModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MQBotWebViewBubbleAnswerCellModel.h; path = "Meiqia-SDK-files/MQChatViewController/TableCells/CellModel/MQBotWebViewBubbleAnswerCellModel.h"; sourceTree = "<group>"; };
@@ -927,7 +927,6 @@
 				F202C076C4FCCB80A0C139FB5CD52F30 /* MQChatViewController */,
 				F2F5A4A07C86F5361A1D8352E3C98B1E /* Support Files */,
 			);
-			name = Meiqia;
 			path = Meiqia;
 			sourceTree = "<group>";
 		};
@@ -976,7 +975,6 @@
 				E509F0C0FC23E2DD3CC43C900A8F70BC /* UIButton+Kingfisher.swift */,
 				CCAD25C72C14C271956D3355796F0B9C /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -987,7 +985,6 @@
 				5CE218C29828FB606328DE54D0B934E5 /* MBProgressHUD.m */,
 				78D13818255BCB101D8907A5AAF1130A /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1011,7 +1008,6 @@
 				B63837D957F523BCABE6FBD4C6599C89 /* JPUSHService.h */,
 				FCFACE41578D2C181DEF888B79B92A37 /* Frameworks */,
 			);
-			name = JPush;
 			path = JPush;
 			sourceTree = "<group>";
 		};
@@ -1082,7 +1078,6 @@
 				945642BA884716FFD528C1E53CD9B92B /* UILayoutSupport+Extensions.swift */,
 				2BA5D20287B7C0B359CDFF3115F18188 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1161,7 +1156,6 @@
 			children = (
 				6CC69B02068106FC912264091101FD9D /* Frameworks */,
 			);
-			name = JCore;
 			path = JCore;
 			sourceTree = "<group>";
 		};
@@ -1234,7 +1228,6 @@
 				8B8E4387BA848ABA010CFA0A7C93709F /* SwiftyJSON.swift */,
 				A2F349E050C8BF58FF48C5E4A9D9B99B /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -1563,7 +1556,6 @@
 				ABDFC74F05C164099A94AF55A3D38B9F /* Validation.swift */,
 				47DC7B02874A379AAC2CC4AAEB1C528E /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1912,7 +1904,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2541,7 +2533,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2549,15 +2543,21 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -2699,7 +2699,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -2707,14 +2709,20 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -2728,6 +2736,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};

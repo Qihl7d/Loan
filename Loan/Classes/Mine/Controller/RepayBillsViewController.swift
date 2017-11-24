@@ -14,6 +14,10 @@ class RepayBillsViewController: UIViewController {
     @IBOutlet weak var customViewTop: NSLayoutConstraint!
     @IBOutlet weak var customViewHeight: NSLayoutConstraint!
     
+    /// 订单model
+    fileprivate var orderModel: CustomerOrder = CustomerOrder()
+    var orderString: String? // 订单编号
+    
     /// 懒加载
     fileprivate lazy var tableView: UITableView = {
         
@@ -44,14 +48,8 @@ class RepayBillsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if IS_IPhone_X {
-            customViewTop.constant = -44
-            customViewHeight.constant = 88
-        }
-        
-        view.backgroundColor = UIColor.white
-        view.addSubview(tableView)
+        setupUI()
+        fetchData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,19 +65,59 @@ class RepayBillsViewController: UIViewController {
 
 }
 
+extension RepayBillsViewController {
+    
+    fileprivate func setupUI() {
+        
+        if IS_IPhone_X {
+            customViewTop.constant = -44
+            customViewHeight.constant = 88
+        }
+        
+        view.backgroundColor = UIColor.white
+        view.addSubview(tableView)
+    }
+    
+    fileprivate func fetchData() {
+        
+        if let order = orderString {
+            
+            printLog("订单编号----\(order)")
+            
+            NetworkTools.fetchRepayRecord(order, complete: { [weak self] (orderDetailData) in
+                self?.orderModel = orderDetailData
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+                
+            })
+        }else {
+            self.orderModel = CustomerOrder()
+        }
+        
+    }
+}
+
 extension RepayBillsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 + 2
+        if let order = orderModel.customerOrderDetails?.count {
+            return order + 1
+        }else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillsOneCell", for: indexPath) as! BillsOneCell
+            cell.orderModel = self.orderModel
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BillsDetailCell", for: indexPath) as! BillsDetailCell
+            cell.orderDetailModel = self.orderModel.customerOrderDetails?[indexPath.row - 1]
             return cell
         }
         

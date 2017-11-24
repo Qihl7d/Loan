@@ -8,7 +8,7 @@ target 'Loan' do
 	pod 'SwiftyJSON'
 	pod 'Kingfisher'
 	pod 'SnapKit'
-	pod 'JPush'
+    pod 'JPush'
 	pod 'Meiqia'
 	pod 'MBProgressHUD'
   # Pods for Loan

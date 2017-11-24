@@ -30,22 +30,33 @@ class BillsDetailCell: UITableViewCell {
                     numberOfPeriodsLab.text = ""
                 }
                 
-                if let time = model.createTime {
+                /// 表示当前起还款状态 当前期状态:'未还款',0, '已还款',1, '已逾期',2 ,
+                if let time = model.repaymentTimeOfEachPeriod, let status = model.repaymentState {
                     
-                    let realTime = time.components(separatedBy: " ").first
-                    
-                    repayTimeLab.text = realTime! + " 日应还"
+                    if status == 0 {
+                        let realTime = time.components(separatedBy: " ").first
+                        repayTimeLab.text = realTime! + " 日应还"
+                        // 未还款
+                        isRepayBtn.setImage(UIImage(named: "repay_unSelect"), for: .normal)
+                        
+                    }else if status == 1 {
+                        let realTime = time.components(separatedBy: " ").first
+                        repayTimeLab.text = realTime! + " 已还款"
+                        isRepayBtn.setImage(UIImage(named: "repay_select"), for: .normal)
+                    }else if status == 2 {
+                        let realTime = time.components(separatedBy: " ").first
+                        repayTimeLab.text = realTime! + " 已逾期"
+                        isRepayBtn.setImage(UIImage(named: "repay_select"), for: .normal)
+                    }else {
+                        let realTime = time.components(separatedBy: " ").first
+                        repayTimeLab.text = realTime! + " 已延期"
+                        isRepayBtn.setImage(UIImage(named: "repay_select"), for: .normal)
+                    }
+   
                 }else {
                     repayTimeLab.text = ""
                 }
-                
-                /// 暂时注释
-//                if let time = model.repaymentTimeOfEachPeriod {
-//                    repayTimeLab.text = time + " 日应还"
-//                }else {
-//                    repayTimeLab.text = ""
-//                }
-                
+
                 if let money = model.amountOfRepaymentPerInstalment, let service = model.serviceFeePerTerm {
                     repayMoneyLab.text = "\(money + service)"
                 }else {

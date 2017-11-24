@@ -20,7 +20,7 @@ class RepayModel {
     /// 订单编号
     var orderNum: String?
     
-    /// 订单状态
+    /// 订单状态 未审核:0, 审核通过:1, 已还清:2, 放款中:3, 放款完成:4, 审核未通过:5, 未还清:6.
     var orderState: Int?
 
     init(dict: [String: AnyObject]) {
@@ -61,7 +61,7 @@ class CustomerOrder {
     /// 订单编号
     var orderNum: String?
     
-    /// 订单状态
+    /// 订单状态 0:'未还款', 1:'已经还款', 2:'已逾期'
     var orderState: Int?
     
     /// 还款总金额
@@ -103,29 +103,38 @@ class CustomerOrderDetails {
     
     var id: Int?
     
-    /// 每期应金额
-    var amountOfRepaymentPerInstalment: Float?
-    
-    /// 时间
-    var createTime: String?
-    
-    /// 分期数
-    var numberOfPeriods: Int?
-    
     /// 订单编号
     var orderNum: String?
-    
-    /// 还款时间
-    var repaymentTime: String?
-    
-    /// 每期还款截止时间
-    var repaymentTimeOfEachPeriod: String?
     
     /// 每期手续费
     var serviceFeePerTerm: Float?
     
+    /// 每期还款截止时间
+    var repaymentTimeOfEachPeriod: String?
+
+    /// 分期数
+    var numberOfPeriods: Int?
+    
+    /// 当前期状态:'未还款',0,'已经还款1',1,'已逾期',2 ,
+    var repaymentState: Int?
+    
+    /// 逾期产生费用
+    var overdueMoney: Float?
+    
+    /// 还款时间
+    var repaymentTime: String?
+
+    /// 时间
+    var createTime: String?
+    
     /// 还款单号
     var tradeNo: String?
+    
+    /// 每期应金额
+    var amountOfRepaymentPerInstalment: Float?
+    
+    /// 是否逾期
+    var isOverdue: Bool?
     
     /// 更新时间
     var updateTime: String?

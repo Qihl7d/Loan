@@ -21,6 +21,8 @@ class TradersPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = UIColor.white
+        
         if IS_IPhone_X {
            customViewHeight.constant = 88
         }
@@ -89,55 +91,62 @@ extension TradersPasswordViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        printLog("输入的------\(string)---\(range)")
+        printLog("输入的-?\(string)?-\(range)")
         
         if (textField == self.passworldTF) {
             
             if (range.location >= 6) {
-                
+                // 密码等于6位 就禁止输入了
                 return false
                 
             } else {
                 
                 if string == "" {
-                    
+                    // 表示用户在点击删除
                     if psd.count != 0 {
+                        //文本删除状态
+                        //移除黑点
+                        pointViewArr[range.location].removeFromSuperview()
+                        pointViewArr.remove(at: range.location)
+                        
                         self.psd.removeLast()
                     }
                     
                 } else {
+                    // 表示用户正在输入密码
+                    if (range.length == 0) {
+                        
+                        //文本输入状态
+                        let pointX = ((passworldTF.width-62.5) / 12) * CGFloat(range.location * 2 + 1) + CGFloat(range.location) * 10.5
+                        let pointY = (passworldTF.height-10) / 2
+                        
+                        //显示黑点
+                        let blackPoint = UIView.init(frame: CGRect.init(x: pointX, y: pointY, width: 12.0, height: 12.0))
+                        blackPoint.layer.cornerRadius = 6
+                        blackPoint.backgroundColor = UIColor.black
+                        
+                        passworldTF.addSubview(blackPoint)
+                        pointViewArr.append(blackPoint)
+                        
+                    }
+                    
                     self.psd.append(string)
                 }
-                
-                printLog(psd)
-                
-                if (range.length == 0) { //文本输入状态
-                    let pointX = ((passworldTF.width-62.5) / 12) * CGFloat(range.location * 2 + 1) + CGFloat(range.location) * 10.5
-                    let pointY = (passworldTF.height-10) / 2
-                    
-                    //显示黑点
-                    let blackPoint = UIView.init(frame: CGRect.init(x: pointX, y: pointY, width: 12.0, height: 12.0))
-                    blackPoint.layer.cornerRadius = 6
-                    blackPoint.backgroundColor = UIColor.black
-                    
-                    passworldTF.addSubview(blackPoint)
-                    
-                    pointViewArr.append(blackPoint)
-                } else {
-                    
-                    //文本删除状态
-                    //移除黑点
-                    pointViewArr[range.location].removeFromSuperview()
-                    pointViewArr.remove(at: range.location)
-                }
 
+                printLog(psd)
+    
                 if psd.count == 6 {
                     
+                    // 拼接字符串
                     let ps = psd.joined(separator: "")
                     
                     DispatchQueue.main.async {
                         MBProgressHUD.showMessage("你输入的密码位\(ps)", toView: self.view)
                     }
+                    
+                    let psVC = TradersPasswordViewController()
+                    self.navigationController?.pushViewController(psVC, animated: true)
+                    
                 }
                 
                 return true

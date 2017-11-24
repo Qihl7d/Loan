@@ -15,7 +15,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var personImgConstraint: NSLayoutConstraint!
     @IBOutlet weak var loanBtnConstraint: NSLayoutConstraint!
     
-    
     @IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var personLab: UILabel!
 
@@ -24,11 +23,13 @@ class HomeViewController: UIViewController {
     fileprivate var qipaoImage: UIImageView!  // 气泡
     
     fileprivate var gradientLayer:CAGradientLayer!  //渐变层
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.barTintColor = UIColor(r: 82, g: 158, b: 178)
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        fetchData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,7 +45,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        fetchData()
         
         if !isLogin().0 {
             
@@ -73,6 +73,11 @@ class HomeViewController: UIViewController {
             cardImgConstraint.constant = 185 + 50
             personImgConstraint.constant = 60
             loanBtnConstraint.constant = 100
+        }
+        
+        if IS_IPhone_X {
+            personImgConstraint.constant = 80
+            loanBtnConstraint.constant = 135
         }
         
     }
@@ -125,14 +130,6 @@ extension HomeViewController {
             printLog("---\(resCode)-\(String(describing: tags))-\(index)")
             
         }, seq: 0)
-
-        //        // 默认情况下extendedLayoutIncludesOpaqueBars = false 扩展布局不包含导航栏
-        //        extendedLayoutIncludesOpaqueBars = true
-        //        if #available(iOS 11.0, *) {
-        ////            tableView.contentInsetAdjustmentBehavior = .never
-        //        }else {
-        //            automaticallyAdjustsScrollViewInsets = false
-        //        }
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
         navigationController?.navigationBar.tintColor = UIColor.white
@@ -180,9 +177,20 @@ extension HomeViewController {
     
     @objc fileprivate func fetchData() {
         
+        /// 显示一个默认值
+        let string = "已有12500人加入中融秒贷"
+        let ranStr = "12500"
+        let str = NSString(string: string)
+        let range = str.range(of: ranStr)
+        let attriStr = NSMutableAttributedString(string: string)
+        attriStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(hexString: "FFC633"), range: range)
+        self.personLab.attributedText = attriStr
+        
+        self.creditLab.countFrom(start: 2500, to: 2800, duration: 1.5)
+        
         if isLogin().0 {
             
-            NetworkTools.fetchMineInfo(isLogin().1) { (homeModel) in
+            NetworkTools.fetchMineInfo(isLogin().phone) { (homeModel) in
                 
                 printLog("信用额度---\(String(describing: homeModel.totalAmount))")
                 printLog("用户数---\(String(describing: homeModel.totalPersonNumber))")
@@ -208,14 +216,12 @@ extension HomeViewController {
                     if homeModel.totalAmount != nil {
                         self.creditLab.countFrom(start: 6123 + homeModel.totalAmount!, to: 6543 + homeModel.totalAmount!, duration: 1)
                     }else{
-                        self.creditLab.countFrom(start: 2500, to: 3000, duration: 1)
+                        self.creditLab.countFrom(start: 2500, to: 3500, duration: 1)
                     }
                     
                 }
             }
         }
-        
     }
-    
    
 }

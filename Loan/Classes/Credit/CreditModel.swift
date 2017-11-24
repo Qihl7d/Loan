@@ -11,7 +11,7 @@ import Foundation
 /// 信用model
 class CreditModel {
     
-    /// 客服id
+    ///  客户id
     var id: Int?
     
     /// 是否电话认证通过(false:未认证,true:认证)

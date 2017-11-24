@@ -26,6 +26,9 @@ let kScreen_h = UIScreen.main.bounds.size.height
  6p/6sp/7p/8p -->  414/736 = 0.5625
      iphone_x -->  375/812 = 0.4618
  
+ // 类：具有相同特征和行为的事物的抽象集合
+ // 对象：是类里面的具体某个实例
+ 
  */
 
 
@@ -46,16 +49,24 @@ func printLog<T>(_ message: T,logError: Bool = false,file: String = #file,method
     }
 }
 
-/// 判断用户是否登录
-func isLogin() -> (Bool, String) {
+/// 判断用户是否登录(登录状态，手就号码，用户id)
+func isLogin() -> (Bool, phone: String, customId: String) {
     
-    let isLogin = UserDefaults.standard.string(forKey: logigSuccess)
-    // 表示已经登录
-    if isLogin != "0" {
-        return (true, isLogin!)
+    let customid = UserDefaults.standard.string(forKey: customId)
+    let isLogin  = UserDefaults.standard.string(forKey: logigSuccess)
+    
+    if isLogin != "0" { // 表示已经登录
+        return (true, isLogin!, customid!)
     }else {
-        return (false, "0")
+        return (false, "","")
     }
+}
+
+/// 跳转登录界面登录
+func persentLogin(_ vc: UIViewController) {
+    let loginNav = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginNavigationController") as! UINavigationController
+    _ = loginNav.viewControllers[0] as! LoginViewController
+    vc.present(loginNav, animated: true, completion: nil)
 }
 
 // MARK: - 局部常量
@@ -69,6 +80,8 @@ let jpush_channel = "Publish Channel"
 
 /// 登录成功
 let logigSuccess = "logigSuccess"
+/// 客服id
+let customId = "customId"
 
 
 //------------- 客户账号管理 -------------//

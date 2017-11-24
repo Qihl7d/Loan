@@ -32,10 +32,27 @@ class RepayViewController: UIViewController {
     // MARK: - Action
     
     @IBAction func historyRecordAction(_ sender: UIButton) {
+        
+//        let historyVC = UIStoryboard(name: "Mine", bundle: nil).instantiateViewController(withIdentifier: "LoanRecordViewController") as! LoanRecordViewController
+//        navigationController?.pushViewController(historyVC, animated: true)
+        
 //        let billVC = BillDetailViewController()
 //        billVC.titleString = "借款记录"
 //        navigationController?.pushViewController(billVC, animated: true)
     }
+    
+    @IBAction func GoRepay(_ sender: UIButton) {
+        
+        // 先判断是否登录 没登录 就先登录
+        guard  isLogin().0 else {
+            persentLogin(self)
+            return
+        }
+        
+        performSegue(withIdentifier: "GoRepayIdentifier", sender: nil)
+        
+    }
+    
     
     /// 银行卡还款
     @IBAction func bankClickedAction(_ sender: UIButton) {
@@ -71,6 +88,10 @@ extension RepayViewController {
     @objc fileprivate func fetchData() {
         
         if isLogin().0 {
+            
+            // 用户id
+            _ = isLogin().customId
+            
             NetworkTools.repayAmount(2) { (value) in
                 DispatchQueue.main.async {
                     self.amoutLab.text = "¥\(value)"

@@ -36,6 +36,7 @@ class CreditViewController: UIViewController {
     fileprivate var gradientLayer:CAGradientLayer!  //渐变层
     
     fileprivate var animateImage: UIImageView! // 光标图
+    fileprivate var layView: LayView! // 渲染动画view
     
     // 角度转弧度
     fileprivate let startAng=135.0/180.0*Double.pi.cgFloat //外圈（底色圈）开始位置
@@ -61,13 +62,6 @@ class CreditViewController: UIViewController {
         setupUI()
         saveAddress()
         fetchData()
-        
-        if !isLogin().0 {
-            /// 只是现实额度 并进行动画
-            creditLab.countFrom(start: 350, to: 550, duration: 3)
-//            setdashBoardView()
-            setLayer()
-        }
 
         /// 表示登录成功在请求数据
         NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: Notification.Name.Task.loginSuccess, object: nil)
@@ -97,27 +91,39 @@ class CreditViewController: UIViewController {
         
         printLog("请求通讯录参数----\(parameters)")
         
-        NetworkTools.saveAddressBook(parameters) { (flag) in
-            
-            if flag {
-                
-                DispatchQueue.main.async {
-                     MBProgressHUD.showMessage("上传通讯录成功", toView: self.view)
-                }
- 
-            }
-            
-        }
+//        NetworkTools.saveAddressBook(parameters) { (flag) in
+//
+//            if flag {
+//
+//                DispatchQueue.main.async {
+//                     MBProgressHUD.showMessage("上传通讯录成功", toView: self.view)
+//                }
+//
+//            }
+//
+//        }
         
     }
     
     /// 银行卡认证
     @IBAction func bankApprove(_ sender: UIButton) {
+        /// 一下功能需要先登录
+        guard isLogin().0 else {
+            // 先去登录
+            persentLogin(self)
+            return
+        }
         printLog("银行卡认证")
     }
     
     /// 个人认证
     @IBAction func personApprove(_ sender: UIButton) {
+        /// 一下功能需要先登录
+        guard isLogin().0 else {
+            // 先去登录
+            persentLogin(self)
+            return
+        }
         
         if creditModel?.isTelAuthentication == false {
             showMsg("请先完成银行卡认证")
@@ -128,6 +134,12 @@ class CreditViewController: UIViewController {
     
     /// 芝麻认证
     @IBAction func zhimaApprove(_ sender: UIButton) {
+        /// 一下功能需要先登录
+        guard isLogin().0 else {
+            // 先去登录
+            persentLogin(self)
+            return
+        }
         
         if creditModel?.isTelAuthentication == false {
             showMsg("请先完成银行卡认证")
@@ -144,6 +156,12 @@ class CreditViewController: UIViewController {
     
     /// 运营商认证
     @IBAction func operatorApporve(_ sender: UIButton) {
+        /// 一下功能需要先登录
+        guard isLogin().0 else {
+            // 先去登录
+            persentLogin(self)
+            return
+        }
         
         if creditModel?.isTelAuthentication == false {
             showMsg("请先完成银行卡认证")
@@ -164,13 +182,19 @@ class CreditViewController: UIViewController {
     }
     
     fileprivate func showMsg(_ text: String) {
-        let alertController = UIAlertController(title: "",
-                                                message: text,
-                                                preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title:"确定", style: .default, handler:nil)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
+        AlertView.show(title: text, options: ["确定"]) { (index) in
+            print("点击了第\(index)个")
+        }
+        
+        
+//        let alertController = UIAlertController(title: "",
+//                                                message: text,
+//                                                preferredStyle: .alert)
+//
+//        let cancelAction = UIAlertAction(title:"确定", style: .default, handler:nil)
+//        alertController.addAction(cancelAction)
+//        self.present(alertController, animated: true, completion: nil)
     }
     
     
@@ -228,18 +252,30 @@ extension CreditViewController {
             make.bottom.equalTo(creditLab).offset(15)
             make.centerX.equalTo(self.view)
         }
+        
+        /// 只是现实额度 并进行动画
+        creditLab.countFrom(start: 350, to: 550, duration: 1.5)
+        setLayer()
     }
     
     fileprivate func setLayer() {
+
+        // 如果存在就先移除 防止动画重复
+        if layView != nil {
+            printLog("-----------------移除layview-----------------")
+            printLog("-----------------移除layview-----------------")
+            printLog("-----------------移除layview-----------------")
+            
+            layView.removeFromSuperview()
+        }
         
+        printLog("----------------\(layView)")
+    
         let layRect = CGRect(x: 0, y: 0, width: kScreen_w, height: kScreen_h*0.4)
         
-        printLog("-------\(layRect)")
-        
-        
-        let lay = LayView(frame: layRect, endAngle: CGFloat(20/180.0*Double.pi))
-        self.creditView.addSubview(lay)
-        lay.setAnimated()
+        layView = LayView(frame: layRect, endAngle: CGFloat(20/180.0*Double.pi))
+        self.creditView.addSubview(layView)
+        layView.setAnimated()
     }
     
     fileprivate func setdashBoardView() {
@@ -445,7 +481,7 @@ extension CreditViewController {
         
         if isLogin().0 {
             
-            NetworkTools.fetchCreditInfo(isLogin().1) { (creditModel) in
+            NetworkTools.fetchCreditInfo(isLogin().phone) { (creditModel) in
                 
                 /// 用户判断用户认证了那些选项
                 self.creditModel = creditModel
@@ -456,6 +492,14 @@ extension CreditViewController {
                 
             }
         }
+        
+//        else {
+//            // 未登录
+//            /// 只是现实额度 并进行动画
+//            creditLab.countFrom(start: 350, to: 550, duration: 3)
+//            setLayer()
+//        }
+  
     }
     
     fileprivate func setupData(_ model: CreditModel) {
@@ -473,10 +517,10 @@ extension CreditViewController {
             endNum = 550
             
         }
-        
+
         /// 只是现实额度 并进行动画
-        creditLab.countFrom(start: startNum.float, to: endNum.float, duration: 3)
-        setdashBoardView()
+        creditLab.countFrom(start: startNum.float, to: endNum.float, duration: 1.5)
+        setLayer()
         
         bankApproveImg.image = model.isCardAuthentication == true ? UIImage(named: "credit_approve") : UIImage(named: "credit_unapprove")
         personApproveImg.image = model.isCardAuthentication == true ? UIImage(named: "credit_approve") : UIImage(named: "credit_unapprove")

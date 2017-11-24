@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        window?.backgroundColor = UIColor.white
+//        window?.backgroundColor = UIColor.white
         
         printLog("window----\(String(describing: window?.frame))")
         
@@ -106,12 +106,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         MQManager.closeMeiqiaService()
         
+        // 程序进入后台10分钟内会响应 applicationWillTerminate 函数，可以在其中添加保存或者清理工作。
         UIApplication.shared.beginBackgroundTask {
             print("程序进入后台，然后再杀死程序")
-            
             /// 注销本地登录保存的信息
             UserDefaults.standard.set("0", forKey: logigSuccess)
             UserDefaults.standard.synchronize()
+            NotificationCenter.default.post(name: Notification.Name.Task.showLogin,
+                                            object: nil,
+                                            userInfo: nil)
+            printLog("longin---\(isLogin())")
         }
     }
 
@@ -137,6 +141,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /// 注销本地登录保存的信息
         UserDefaults.standard.set("0", forKey: logigSuccess)
         UserDefaults.standard.synchronize()
+        NotificationCenter.default.post(name: Notification.Name.Task.showLogin,
+                                        object: nil,
+                                        userInfo: nil)
         
         printLog("longin---\(isLogin())")
     }

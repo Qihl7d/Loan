@@ -60,45 +60,49 @@ class LoginViewController: UIViewController {
         //获取验证吗
         NetworkTools.fetchVerificationCode(phoneTF.text!) { (code) in
             printLog("验证吗----\(code)")
+            
+            DispatchQueue.main.async {
+                self.codeTF.text = code
+            }
         }
         
-//        codeBtn.isEnabled = false
-//        codeBtn.backgroundColor = UIColor.groupTableViewBackground
-//
-//        // 定义需要计时的时间
-//        var timeCount = 10
-//        // 在global线程里创建一个时间源
-//        let codeTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
-//        // 设定这个时间源是每秒循环一次，立即开始
-//        codeTimer.schedule(deadline: .now(), repeating: .seconds(1))
-//        // 设定时间源的触发事件
-//        codeTimer.setEventHandler(handler: {
-//            // 时间到了取消时间源
-//            if timeCount <= 1 {
-//                codeTimer.cancel()
-//                // codeTimer.suspend() // 暂停
-//                // 返回主线程处理一些事件，更新UI等等
-//                DispatchQueue.main.async {
-//                    self.codeBtn.setTitle("获取验证吗", for: .normal)
-//                    self.codeBtn.isEnabled = true
-//                    self.codeBtn.backgroundColor = UIColor(hexString: "5A8AC6")
-//                }
-//            }else {
-//
-//                // 返回主线程处理一些事件，更新UI等等
-//                DispatchQueue.main.async {
-//                    self.codeBtn.setTitle("剩余\(timeCount)s", for: .normal)
-//                    self.codeBtn.isEnabled = false
-//                    self.codeBtn.backgroundColor = UIColor(hexColor: "5A8AC6", alpha: 0.8)
-//                }
-//
-//                // 每秒计时一次
-//                timeCount = timeCount - 1
-//            }
-//
-//        })
-//        // 启动时间源
-//        codeTimer.resume()
+        codeBtn.isEnabled = false
+        codeBtn.backgroundColor = UIColor.groupTableViewBackground
+
+        // 定义需要计时的时间
+        var timeCount = 10
+        // 在global线程里创建一个时间源
+        let codeTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
+        // 设定这个时间源是每秒循环一次，立即开始
+        codeTimer.schedule(deadline: .now(), repeating: .seconds(1))
+        // 设定时间源的触发事件
+        codeTimer.setEventHandler(handler: {
+            // 时间到了取消时间源
+            if timeCount <= 1 {
+                codeTimer.cancel()
+                // codeTimer.suspend() // 暂停
+                // 返回主线程处理一些事件，更新UI等等
+                DispatchQueue.main.async {
+                    self.codeBtn.setTitle("获取验证吗", for: .normal)
+                    self.codeBtn.isEnabled = true
+                    self.codeBtn.backgroundColor = UIColor(hexString: "5A8AC6")
+                }
+            }else {
+
+                // 返回主线程处理一些事件，更新UI等等
+                DispatchQueue.main.async {
+                    self.codeBtn.setTitle("剩余\(timeCount)s", for: .normal)
+                    self.codeBtn.isEnabled = false
+                    self.codeBtn.backgroundColor = UIColor(hexColor: "5A8AC6", alpha: 0.8)
+                }
+
+                // 每秒计时一次
+                timeCount = timeCount - 1
+            }
+
+        })
+        // 启动时间源
+        codeTimer.resume()
     }
     
     /// 登录
@@ -139,6 +143,9 @@ class LoginViewController: UIViewController {
             
             if flag {
                 
+                // 登录成功就保存用户id 和 手机号码， 当在程序被杀死的时候清除，以保证每次 用户来使用的时候先登录在使用
+                
+                UserDefaults.standard.set(msg, forKey: customId)
                 UserDefaults.standard.set(self.phoneTF.text!, forKey: logigSuccess)
                 UserDefaults.standard.synchronize()
                 
@@ -147,7 +154,7 @@ class LoginViewController: UIViewController {
                                                 object: nil,
                                                 userInfo: nil)
                 DispatchQueue.main.async {
-                    MBProgressHUD.showMessage("登录成功", toView: keyView)
+                    MBProgressHUD.showMessage("登录成功", toView: self.view)
                     self.dismiss(animated: true, completion: nil)
                 }
                 
