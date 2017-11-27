@@ -40,12 +40,6 @@ class LoanRecordViewController: UIViewController {
             destinationVc.orderString = sender as? String /// 订单编号
         }
     }
-    
-    
-    @IBAction func backAction(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-  
 
 }
 

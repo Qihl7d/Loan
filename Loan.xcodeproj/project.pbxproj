@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		62AD4B914938535B24453D90 /* Pods_Loan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE914474DF11D263DBB3E72 /* Pods_Loan.framework */; };
+		8B0309531FCBC3720038ABBC /* SnowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0309521FCBC3720038ABBC /* SnowView.swift */; };
 		8B05644C1FC550E300D2F4EE /* LoanRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B05644B1FC550E300D2F4EE /* LoanRecordCell.swift */; };
 		8B1EC4E41FB1D1570049F9E7 /* LCCounterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1EC4E31FB1D1570049F9E7 /* LCCounterLabel.swift */; };
+		8B1F900B1FCBE2A8004FB170 /* MotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1F900A1FCBE2A8004FB170 /* MotionView.swift */; };
 		8B24F9A11FBD2C6400E9FCF3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24F9A01FBD2C6400E9FCF3 /* SettingViewController.swift */; };
 		8B24F9A31FBD32C100E9FCF3 /* TradersPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24F9A21FBD32C100E9FCF3 /* TradersPasswordViewController.swift */; };
 		8B24F9A51FBD32EA00E9FCF3 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24F9A41FBD32EA00E9FCF3 /* FeedbackViewController.swift */; };
@@ -17,6 +19,7 @@
 		8B24F9AA1FBD3E2800E9FCF3 /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B24F9A81FBD3E2800E9FCF3 /* ShareCell.swift */; };
 		8B24F9AB1FBD3E2800E9FCF3 /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B24F9A91FBD3E2800E9FCF3 /* ShareCell.xib */; };
 		8B3A2AA41FB20A1C0056F952 /* LCCountDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3A2AA31FB20A1C0056F952 /* LCCountDownButton.swift */; };
+		8B51B7A61FCC129400C8C0CE /* AnimatedMaskLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51B7A51FCC129400C8C0CE /* AnimatedMaskLabel.swift */; };
 		8B52185F1FC406B60042156B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B52185E1FC406B60042156B /* Home.storyboard */; };
 		8B5A7B491FB1A94B00946AA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5A7B481FB1A94B00946AA0 /* HomeViewController.swift */; };
 		8B5A7B4B1FB1A96C00946AA0 /* RepayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5A7B4A1FB1A96C00946AA0 /* RepayViewController.swift */; };
@@ -94,8 +97,10 @@
 		36D6D715586465A422556670 /* Pods-Loan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Loan/Pods-Loan.debug.xcconfig"; sourceTree = "<group>"; };
 		3AE914474DF11D263DBB3E72 /* Pods_Loan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Loan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8BC2E6F2C015219B69CB43 /* Pods-Loan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Loan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Loan/Pods-Loan.release.xcconfig"; sourceTree = "<group>"; };
+		8B0309521FCBC3720038ABBC /* SnowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnowView.swift; sourceTree = "<group>"; };
 		8B05644B1FC550E300D2F4EE /* LoanRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanRecordCell.swift; sourceTree = "<group>"; };
 		8B1EC4E31FB1D1570049F9E7 /* LCCounterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCCounterLabel.swift; sourceTree = "<group>"; };
+		8B1F900A1FCBE2A8004FB170 /* MotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionView.swift; sourceTree = "<group>"; };
 		8B24F9A01FBD2C6400E9FCF3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8B24F9A21FBD32C100E9FCF3 /* TradersPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradersPasswordViewController.swift; sourceTree = "<group>"; };
 		8B24F9A41FBD32EA00E9FCF3 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +108,7 @@
 		8B24F9A81FBD3E2800E9FCF3 /* ShareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
 		8B24F9A91FBD3E2800E9FCF3 /* ShareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		8B3A2AA31FB20A1C0056F952 /* LCCountDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCCountDownButton.swift; sourceTree = "<group>"; };
+		8B51B7A51FCC129400C8C0CE /* AnimatedMaskLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedMaskLabel.swift; sourceTree = "<group>"; };
 		8B52185E1FC406B60042156B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8B5A7B481FB1A94B00946AA0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8B5A7B4A1FB1A96C00946AA0 /* RepayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepayViewController.swift; sourceTree = "<group>"; };
@@ -461,6 +467,9 @@
 				8B3A2AA31FB20A1C0056F952 /* LCCountDownButton.swift */,
 				8BF414851FB2B59100FA11DA /* LCCardFlowLayout.swift */,
 				8B65BBCD1FC69BDD00B3CD3E /* AlertView.swift */,
+				8B0309521FCBC3720038ABBC /* SnowView.swift */,
+				8B1F900A1FCBE2A8004FB170 /* MotionView.swift */,
+				8B51B7A51FCC129400C8C0CE /* AnimatedMaskLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -706,9 +715,11 @@
 				8B24F9A71FBD3C6A00E9FCF3 /* ShareView.swift in Sources */,
 				8B5A7B571FB1B08100946AA0 /* String+Extension.swift in Sources */,
 				8BB0545F1FB548EE00513811 /* LoginViewController.swift in Sources */,
+				8B0309531FCBC3720038ABBC /* SnowView.swift in Sources */,
 				8BD633701FB16A76001B9200 /* LCNavigationController.swift in Sources */,
 				8B24F9A11FBD2C6400E9FCF3 /* SettingViewController.swift in Sources */,
 				8B5A7B531FB1AEC700946AA0 /* Notification+Extension.swift in Sources */,
+				8B51B7A61FCC129400C8C0CE /* AnimatedMaskLabel.swift in Sources */,
 				8BF414861FB2B59100FA11DA /* LCCardFlowLayout.swift in Sources */,
 				8BF414A71FB2EC1E00FA11DA /* bankSelectCell.swift in Sources */,
 				8B5A7B511FB1AD8000946AA0 /* UIView+Extension.swift in Sources */,
@@ -723,6 +734,7 @@
 				8BF7C3331FBD745400B3D992 /* MsgCenterViewController.swift in Sources */,
 				8BD6337B1FB1A061001B9200 /* LCTitleCell.swift in Sources */,
 				8BD2AACF1FBBD75A00AD05A1 /* MBProgressHUD+HUD.swift in Sources */,
+				8B1F900B1FCBE2A8004FB170 /* MotionView.swift in Sources */,
 				8BD057201FBEB45500CFF0CB /* StringPickerView.swift in Sources */,
 				8B5A7B4D1FB1A98B00946AA0 /* CreditViewController.swift in Sources */,
 				8BF7C3351FBD775800B3D992 /* MsgCell.swift in Sources */,

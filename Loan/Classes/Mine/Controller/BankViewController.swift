@@ -21,7 +21,7 @@ class BankViewController: UIViewController {
     ///第一次运行
     fileprivate var isFirstRun: Bool!
     
-    fileprivate var bankNameArray: [String] = {
+    var bankNameArray: [String] = {
         return ["中国银行","建设银行","农业银行","招商银行","交通银行","中国银行","建设银行","农业银行","招商银行","交通银行"]
     }()
     
@@ -36,11 +36,7 @@ class BankViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Action
-    @IBAction func backAction(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-    
+    // MARK: - Action    
     @IBAction func addBackAction(_ sender: UIButton) {
 
     }

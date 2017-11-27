@@ -72,10 +72,6 @@ class SettingViewController: UIViewController {
     }
 
     // MARK: - Action
-
-    @IBAction func backAction(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
     
     /// 消息通知
     @IBAction func msgNotificationAction(_ sender: UISwitch) {

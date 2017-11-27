@@ -64,11 +64,7 @@ class HelpViewController: UIViewController {
     }
     
     // MARK: - Action
-    
-    @IBAction func backAction(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-    
+
     /// 联系客服
     @IBAction func chatAction(_ sender: UIButton) {
         let chatVC = MQChatViewManager()

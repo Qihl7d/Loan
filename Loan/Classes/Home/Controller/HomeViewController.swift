@@ -29,6 +29,10 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(r: 82, g: 158, b: 178)
         UIApplication.shared.statusBarStyle = .lightContent
         
+        // 一个类似下雪的粒子发射器
+        let snowView = SnowView(frame: CGRect(x: -150, y:-100, width: 300, height: 50))
+        view.addSubview(snowView)
+        
         fetchData()
     }
     

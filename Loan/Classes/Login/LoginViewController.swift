@@ -14,7 +14,56 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var codeTF: UITextField!
     @IBOutlet weak var codeBtn: UIButton!
-
+    @IBOutlet weak var loginBtn: UIButton!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
+        
+        // 1. 入场动画一(系统动画)
+        
+         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0,
+         options: [], animations: {
+         self.loginBtn.center.x += self.view.bounds.width
+         }, completion: nil)
+ 
+        
+        // 2. 入场动画二(动画组)
+        
+        /*
+         let formGroup = CAAnimationGroup()
+         formGroup.duration = 0.5
+         formGroup.fillMode = kCAFillModeBackwards
+         
+         let flyRight = CABasicAnimation(keyPath: "position.x")
+         flyRight.fromValue = -view.bounds.size.width/2
+         flyRight.toValue = view.bounds.size.width/2
+         
+         let fadeFieldIn = CABasicAnimation(keyPath: "opacity")
+         fadeFieldIn.fromValue = 0.25
+         fadeFieldIn.toValue = 1.0
+         
+         let pulse = CASpringAnimation(keyPath: "transform.scale")
+         pulse.damping = 7.5
+         pulse.fromValue = 1.25
+         pulse.toValue = 1.0
+         pulse.duration = pulse.settlingDuration
+         
+         formGroup.animations = [flyRight, fadeFieldIn, pulse]
+         
+         formGroup.setValue(loginBtn.layer, forKey: "layer")
+         
+         formGroup.beginTime = CACurrentMediaTime() + 0.3
+         loginBtn.layer.add(formGroup, forKey: nil)
+         */
+       
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -109,6 +158,18 @@ class LoginViewController: UIViewController {
     @IBAction func loginAction(_ sender: UIButton) {
         
         self.view.endEditing(true)
+        
+        printLog(self.loginBtn.bounds.size.width)
+        
+        // 动画
+//        UIView.animate(withDuration: 1.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
+//            self.loginBtn.bounds.size.width = +80
+//        }, completion: nil)
+        
+        
+//        UIView.animate(withDuration: 0.33, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [], animations: {
+//            self.loginBtn.center.y += 50
+//        }, completion: nil)
         
         guard phoneTF.text != "" else {
             printLog("请输入手机号")
@@ -214,6 +275,8 @@ extension LoginViewController {
         
         phoneTF.delegate = self
         codeTF.delegate = self
+        
+        loginBtn.center.x -= view.bounds.width
     }
 }
 

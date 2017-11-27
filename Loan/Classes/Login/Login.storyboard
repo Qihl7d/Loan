@@ -51,26 +51,6 @@
                                     <constraint firstItem="4jm-1C-R6X" firstAttribute="leading" secondItem="C6z-q7-NGW" secondAttribute="leading" constant="15" id="T4k-x3-EW7"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S14-wt-9h1">
-                                <rect key="frame" x="50" y="484" width="275" height="40"/>
-                                <color key="backgroundColor" red="0.35311773419380188" green="0.53739339113235474" blue="0.772613525390625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="uH9-YQ-aoH"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <state key="normal" title="登录">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="loginAction:" destination="nfs-bp-2Qi" eventType="touchUpInside" id="2EE-ia-6ft"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5Y-rC-Wuq">
                                 <rect key="frame" x="0.0" y="334" width="375" height="50"/>
                                 <subviews>
@@ -113,19 +93,34 @@
                                     <constraint firstItem="Wmb-Z1-TxH" firstAttribute="centerY" secondItem="d5Y-rC-Wuq" secondAttribute="centerY" id="zt8-Zr-XRX"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S14-wt-9h1">
+                                <rect key="frame" x="50" y="462" width="275" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.35311773419380188" green="0.53739339113235474" blue="0.772613525390625" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginAction:" destination="nfs-bp-2Qi" eventType="touchUpInside" id="2EE-ia-6ft"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95299792289733887" green="0.95279216766357422" blue="0.96472084522247314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="d5Y-rC-Wuq" firstAttribute="leading" secondItem="GZa-Be-NEr" secondAttribute="leading" id="EYh-1p-d7V"/>
                             <constraint firstItem="d5Y-rC-Wuq" firstAttribute="top" secondItem="C6z-q7-NGW" secondAttribute="bottom" constant="10" id="F29-fN-JYc"/>
                             <constraint firstItem="1Fq-4J-LaV" firstAttribute="centerX" secondItem="egm-4Q-6U4" secondAttribute="centerX" id="Ipj-E3-Ah9"/>
-                            <constraint firstItem="S14-wt-9h1" firstAttribute="top" secondItem="d5Y-rC-Wuq" secondAttribute="bottom" constant="100" id="JLZ-If-fKL"/>
                             <constraint firstItem="C6z-q7-NGW" firstAttribute="trailing" secondItem="GZa-Be-NEr" secondAttribute="trailing" id="XYY-wt-n5q"/>
-                            <constraint firstItem="GZa-Be-NEr" firstAttribute="trailing" secondItem="S14-wt-9h1" secondAttribute="trailing" constant="50" id="Z4p-aZ-tcb"/>
                             <constraint firstItem="C6z-q7-NGW" firstAttribute="top" secondItem="1Fq-4J-LaV" secondAttribute="bottom" constant="65" id="bXH-83-1Sf"/>
                             <constraint firstItem="d5Y-rC-Wuq" firstAttribute="trailing" secondItem="GZa-Be-NEr" secondAttribute="trailing" id="dRX-cY-aLU"/>
                             <constraint firstItem="1Fq-4J-LaV" firstAttribute="top" secondItem="GZa-Be-NEr" secondAttribute="top" constant="65" id="eqr-RL-e3d"/>
-                            <constraint firstItem="S14-wt-9h1" firstAttribute="leading" secondItem="GZa-Be-NEr" secondAttribute="leading" constant="50" id="jva-Fz-ac3"/>
                             <constraint firstItem="C6z-q7-NGW" firstAttribute="leading" secondItem="GZa-Be-NEr" secondAttribute="leading" id="qCn-qO-v5g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GZa-Be-NEr"/>
@@ -140,6 +135,7 @@
                     <connections>
                         <outlet property="codeBtn" destination="Kx9-L7-N1S" id="t33-Tx-uoJ"/>
                         <outlet property="codeTF" destination="Wmb-Z1-TxH" id="zAL-36-16F"/>
+                        <outlet property="loginBtn" destination="S14-wt-9h1" id="phZ-DY-xOx"/>
                         <outlet property="phoneTF" destination="tCY-AU-hmb" id="dcb-3A-VSu"/>
                     </connections>
                 </viewController>

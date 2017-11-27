@@ -10,6 +10,7 @@ import UIKit
 
 class MineTableViewController: UITableViewController {
 
+    @IBOutlet weak var motionV: UIView!
     /// 头像
     @IBOutlet weak var headImg: UIImageView!
     /// 用户名
@@ -52,6 +53,23 @@ class MineTableViewController: UITableViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // 统一返回的unwind segue
+    @IBAction func closeVc(segue: UIStoryboardSegue) {
+        printLog("关闭视图控制器")
+        
+        printLog("--------------")
+        printLog(segue.destination)
+        printLog(segue.identifier)
+        printLog(segue.source)
+        printLog("--------------")
+        
+        if segue.destination == self && segue.source == BankViewController()  {
+            let bankVc = segue.source as! BankViewController
+            printLog("银行卡----\(bankVc.bankNameArray)")
+        }
+        
+    }
+    
     @IBAction func loginAction(_ sender: UIButton) {
         persentLogin(self)
     }
@@ -73,6 +91,16 @@ class MineTableViewController: UITableViewController {
         // 登录按钮
         loginBtn.cuttingCorner(radius: 19)
         loginBtn.setupBorder(width: 2, color: UIColor.white)
+        
+        
+        // 加入我的贴纸标签
+        
+        let motionRect = CGRect(x: 0, y: 0, width: kScreen_w, height: 200)
+        let imgArr: [String] = ["图片1","图片2","图片3","图片4","图片5","图片6","图片7","图片8","图片9","图片10","图片11"]
+        let motionView = MotionView(frame: motionRect, imageArr: imgArr)
+        motionView.backgroundColor = UIColor.clear
+        self.motionV.addSubview(motionView)
+
     }
     
     @objc fileprivate func fetchData() {
