@@ -43,6 +43,7 @@ let kScreen_h = UIScreen.main.bounds.size.height
 
 
 /// 设计屏幕适配
+let IS_IPhone4s:           Bool = kScreen_h == 480 ? true : false  // 适配4s时为了审核，审核人员时在ipad air 2
 let IS_IPhone5_5s:         Bool = kScreen_h == 568 ? true : false
 let IS_IPhone6_6s_7_8:     Bool = kScreen_h == 667 ? true : false
 let IS_IPhone6p_6sp_7p_8p: Bool = kScreen_h == 736 ? true : false
@@ -82,7 +83,7 @@ func persentLogin(_ vc: UIViewController) {
 // MARK: - 局部常量
 
 /// 根url地址
-let baseUrl = "http://116.62.218.101:8080/parent/"
+let baseUrl = "http://116.62.218.101:8081/parent/"
 ///  极光推送appkey
 let jpush_appKey = "e339251b5ef4bdfa8fa53cd1"
 /// 发布渠道

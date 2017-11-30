@@ -35,15 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // TODO: 为了被拒。直接注释掉一下代码
         // 请求访问通讯录
-        /// 第一次 先去请求访问通讯录
-        CNContactStore().requestAccess(for: .contacts) { (isRight, error) in
-            if isRight {
-                // 授权成功
-                printLog("请求授权成功")
-            }else{
-                printLog("请求授权失败")
-            }
-        }
+//        /// 第一次 先去请求访问通讯录
+//        CNContactStore().requestAccess(for: .contacts) { (isRight, error) in
+//            if isRight {
+//                // 授权成功
+//                printLog("请求授权成功")
+//            }else{
+//                printLog("请求授权失败")
+//            }
+//        }
         
         // 极光推送配置
         //通知类型（这里将声音、消息、提醒角标都给加上）

@@ -45,33 +45,37 @@
                                             <action selector="requestLoan:" destination="WCP-31-em0" eventType="touchUpInside" id="gCV-cv-koO"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的综合信用评级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-qK-1ru">
-                                        <rect key="frame" x="117.5" y="213" width="139" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eas-ge-Fda" firstAttribute="top" secondItem="a0a-DA-0nk" secondAttribute="bottom" constant="20" id="RRx-Jc-xdl"/>
                                     <constraint firstItem="a0a-DA-0nk" firstAttribute="centerX" secondItem="n5l-xU-x3M" secondAttribute="centerX" id="UQg-yN-08F"/>
                                     <constraint firstItem="a0a-DA-0nk" firstAttribute="centerY" secondItem="n5l-xU-x3M" secondAttribute="centerY" id="gjf-lV-SOZ"/>
                                     <constraint firstItem="eas-ge-Fda" firstAttribute="centerX" secondItem="a0a-DA-0nk" secondAttribute="centerX" id="khf-hj-6Ax"/>
-                                    <constraint firstItem="QGa-qK-1ru" firstAttribute="top" secondItem="a0a-DA-0nk" secondAttribute="bottom" constant="15" id="oZ3-MZ-T8A"/>
-                                    <constraint firstItem="QGa-qK-1ru" firstAttribute="centerX" secondItem="a0a-DA-0nk" secondAttribute="centerX" id="zxu-Gg-k7q"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_unapprove" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-88-xde">
                                 <rect key="frame" x="15" y="292" width="345" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="GRn-au-wMQ"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_unapprove" translatesAutoresizingMaskIntoConstraints="NO" id="jO6-bu-1K5">
                                 <rect key="frame" x="15" y="363" width="345" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="IwH-iv-eay"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_unapprove" translatesAutoresizingMaskIntoConstraints="NO" id="va5-Y7-CC5">
                                 <rect key="frame" x="15" y="434" width="345" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="qO2-wV-HnK"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_unapprove" translatesAutoresizingMaskIntoConstraints="NO" id="veD-jF-TVY">
                                 <rect key="frame" x="15" y="505" width="345" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="gNZ-9k-jKM"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F23-L5-Hlk">
                                 <rect key="frame" x="15" y="292" width="345" height="61"/>
@@ -281,14 +285,18 @@
                     <navigationItem key="navigationItem" id="Xyt-As-3P7"/>
                     <connections>
                         <outlet property="bankApproveImg" destination="c6d-88-xde" id="63I-UR-MRH"/>
+                        <outlet property="bankConstraint" destination="GRn-au-wMQ" id="1gW-1E-u0g"/>
                         <outlet property="creditImageView" destination="a0a-DA-0nk" id="Nxd-wc-Hdg"/>
                         <outlet property="creditView" destination="n5l-xU-x3M" id="5JD-Ko-4QQ"/>
                         <outlet property="lendBtn" destination="eas-ge-Fda" id="lZj-Z3-ri5"/>
                         <outlet property="loadBtnTopConstraint" destination="RRx-Jc-xdl" id="Dqs-RJ-CU0"/>
                         <outlet property="operatorApproveImg" destination="veD-jF-TVY" id="N3j-jO-rji"/>
                         <outlet property="personApproveImg" destination="jO6-bu-1K5" id="1oG-0M-HfM"/>
+                        <outlet property="personConstraint" destination="IwH-iv-eay" id="u84-Ue-FUH"/>
+                        <outlet property="phoneConstraint" destination="gNZ-9k-jKM" id="Gez-z9-G1L"/>
                         <outlet property="topLayoutConstraint" destination="iLO-Qd-d36" id="0AI-m9-24e"/>
                         <outlet property="zhimaApproveImg" destination="va5-Y7-CC5" id="sLc-tv-Sy3"/>
+                        <outlet property="zhimaConstraint" destination="qO2-wV-HnK" id="HuK-wS-Dnl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eI7-9k-NUo" userLabel="First Responder" sceneMemberID="firstResponder"/>

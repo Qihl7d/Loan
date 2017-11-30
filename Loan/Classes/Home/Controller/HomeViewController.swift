@@ -71,6 +71,11 @@ class HomeViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        if IS_IPhone4s {
+            personImgConstraint.constant = 50
+            loanBtnConstraint.constant = 80
+        }
+        
         if IS_IPhone6_6s_7_8 {
             loanBtnConstraint.constant = 100
         }
@@ -149,6 +154,11 @@ extension HomeViewController {
         
         creditLab.snp.makeConstraints { (make) in
             make.centerX.equalTo(cardImage).offset(40)
+            
+            if IS_IPhone4s {
+                creditLab.font = UIFont.boldSystemFont(ofSize: 25)
+                make.centerY.equalTo(cardImage).offset(-8)
+            }
 
             if IS_IPhone5_5s || IS_IPhone6_6s_7_8 || IS_IPhone_X {
                make.centerY.equalTo(cardImage).offset(-8)

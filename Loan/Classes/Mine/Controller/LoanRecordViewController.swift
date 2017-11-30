@@ -79,7 +79,7 @@ extension LoanRecordViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "LoanCellIdentifier", sender: repayArray[indexPath.row].orderNum)
+//        performSegue(withIdentifier: "LoanCellIdentifier", sender: repayArray[indexPath.row].orderNum)
     }
     
 }

@@ -22,6 +22,17 @@ class CreditViewController: UIViewController {
     @IBOutlet weak var topLayoutConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var loadBtnTopConstraint: NSLayoutConstraint!
+    
+    /// 适配iPhone4 苹果工作人员审核
+    
+    @IBOutlet weak var bankConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var personConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var zhimaConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var phoneConstraint: NSLayoutConstraint!
+    
     /// 银行卡认证
     @IBOutlet weak var bankApproveImg: UIImageView!
     /// 个人身份认证（个人信息和身份证以及人脸识别）
@@ -48,19 +59,22 @@ class CreditViewController: UIViewController {
     
     fileprivate var creditModel: CreditModel? // 信用model
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-//        animateImage.removeFromSuperview()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if IS_IPhone4s {
+            bankConstraint.constant = 44
+            personConstraint.constant = 44
+            zhimaConstraint.constant = 44
+            phoneConstraint.constant = 44
+        }
+  
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        saveAddress()
+//        saveAddress()
         fetchData()
 
         /// 表示登录成功在请求数据

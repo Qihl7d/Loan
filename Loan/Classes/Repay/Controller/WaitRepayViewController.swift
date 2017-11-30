@@ -73,7 +73,7 @@ extension WaitRepayViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "repayCellIdentifier", sender: repayArray[indexPath.row].orderNum)
+//        performSegue(withIdentifier: "repayCellIdentifier", sender: repayArray[indexPath.row].orderNum)
     }
     
 }
