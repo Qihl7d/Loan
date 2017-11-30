@@ -30,10 +30,11 @@ class HomeViewController: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
         
         // 一个类似下雪的粒子发射器
-        let snowView = SnowView(frame: CGRect(x: -150, y:-100, width: 300, height: 50))
-        view.addSubview(snowView)
+//        let snowView = SnowView(frame: CGRect(x: 00, y:-100, width: kScreen_w, height: 50))
+//        view.addSubview(snowView)
+//        snowView.bringSubview(toFront: self.view)
         
-        fetchData()
+//        fetchData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,6 +50,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        fetchData()
         
         if !isLogin().0 {
             
@@ -104,16 +106,15 @@ class HomeViewController: UIViewController {
     ///  立即借款
     @IBAction func lendAction(_ sender: UIButton) {
         
-        // 判断如果没有登录
-        if isLogin().0 {
-            let repay = BorrowViewController()
-            navigationController?.pushViewController(repay, animated: true)
-        }else {
-            let loginNav = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginNavigationController") as! UINavigationController
-            _ = loginNav.viewControllers[0] as! LoginViewController
-            
-            self.present(loginNav, animated: true, completion: nil)
-        }
+//        // 先判断是否登录 没登录 就先登录
+//        guard  isLogin().0 else {
+//            persentLogin(self)
+//            return
+//        }
+        
+        let repay = BorrowViewController()
+        navigationController?.pushViewController(repay, animated: true)
+
     }
 }
 

@@ -25,6 +25,7 @@ class MineTableViewController: UITableViewController {
         super.viewDidLoad()
         setupUI()
         fetchData()
+        
         /// 表示登录成功在请求数据
         NotificationCenter.default.addObserver(self, selector: #selector(fetchData), name: Notification.Name.Task.loginSuccess, object: nil)
         
@@ -34,8 +35,7 @@ class MineTableViewController: UITableViewController {
     }
     
     @objc fileprivate func showLogin() {
-        bgView.isHidden = false
-        
+//        bgView.isHidden = false
         printLog("登录按钮已经显示-----0.0")
     }
     
@@ -89,14 +89,16 @@ class MineTableViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         
         // 登录按钮
-        loginBtn.cuttingCorner(radius: 19)
-        loginBtn.setupBorder(width: 2, color: UIColor.white)
+//        loginBtn.cuttingCorner(radius: 19)
+//        loginBtn.setupBorder(width: 2, color: UIColor.white)
         
+        // 隐藏登录按钮
+//        bgView.isHidden = true
         
         // 加入我的贴纸标签
         
         let motionRect = CGRect(x: 0, y: 0, width: kScreen_w, height: 200)
-        let imgArr: [String] = ["图片1","图片2","图片3","图片4","图片5","图片6","图片7","图片8","图片9","图片10","图片11"]
+        let imgArr: [String] = ["zhong","rong","miao","dai","coin","coin","coin","coin"]
         let motionView = MotionView(frame: motionRect, imageArr: imgArr)
         motionView.backgroundColor = UIColor.clear
         self.motionV.addSubview(motionView)
@@ -108,7 +110,7 @@ class MineTableViewController: UITableViewController {
         /// 表示必须要登录后才能请求数据
         if isLogin().0 {
             
-            bgView.isHidden = true
+//            bgView.isHidden = true
             
             NetworkTools.fetchMineInfo(isLogin().phone) { (homeModel) in
                 printLog("信用额度---\(String(describing: homeModel.totalAmount))")
@@ -122,11 +124,11 @@ class MineTableViewController: UITableViewController {
             }
             
         }else {
-            bgView.isHidden = false
+//            bgView.isHidden = false
             
             // 未登录就现实 请先登录
             headImg.image = UIImage(named: "mine_head")
-            nameLab.text = "请先登录"
+            nameLab.text = " 张三"
             amountLab.text = "可用额度：¥10000"
         }
  
@@ -136,12 +138,12 @@ class MineTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
 
-        /// 一下功能需要先登录
-        guard isLogin().0 else {
-            // 先去登录
-            persentLogin(self)
-            return
-        }
+//        /// 一下功能需要先登录
+//        guard isLogin().0 else {
+//            // 先去登录
+//            persentLogin(self)
+//            return
+//        }
         
         /// 借款记录
         if indexPath.row == 1 {

@@ -230,7 +230,7 @@
                     <navigationItem key="navigationItem" title="还款" id="79S-h8-lQG"/>
                     <connections>
                         <outlet property="amoutLab" destination="fvm-Ff-t5i" id="vsA-WW-G90"/>
-                        <segue destination="V1f-fD-yco" kind="show" id="kxq-cB-Iqk"/>
+                        <segue destination="V1f-fD-yco" kind="show" identifier="GoRepayIdentifier" id="kxq-cB-Iqk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DlU-vg-Kur" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -379,14 +379,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jjo-lv-zM6">
                                 <rect key="frame" x="0.0" y="20" width="375" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 1000.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIE-ua-n34">
-                                        <rect key="frame" x="138.5" y="50" width="99.5" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 100.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIE-ua-n34">
+                                        <rect key="frame" x="145.5" y="50" width="84" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本期还款金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1Z-Jn-wUf">
-                                        <rect key="frame" x="151.5" y="84" width="74" height="14.5"/>
+                                        <rect key="frame" x="150.5" y="84" width="74" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>

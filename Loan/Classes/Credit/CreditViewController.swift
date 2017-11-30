@@ -91,6 +91,8 @@ class CreditViewController: UIViewController {
         
         printLog("请求通讯录参数----\(parameters)")
         
+//        MBProgressHUD.showMessage("dian", toView: <#T##UIView#>)
+        
 //        NetworkTools.saveAddressBook(parameters) { (flag) in
 //
 //            if flag {
@@ -107,78 +109,77 @@ class CreditViewController: UIViewController {
     
     /// 银行卡认证
     @IBAction func bankApprove(_ sender: UIButton) {
-        /// 一下功能需要先登录
-        guard isLogin().0 else {
-            // 先去登录
-            persentLogin(self)
-            return
-        }
-        printLog("银行卡认证")
+//        /// 一下功能需要先登录
+//        guard isLogin().0 else {
+//            // 先去登录
+//            persentLogin(self)
+//            return
+//        }
+        
+//        printLog("银行卡认证")
     }
     
     /// 个人认证
     @IBAction func personApprove(_ sender: UIButton) {
-        /// 一下功能需要先登录
-        guard isLogin().0 else {
-            // 先去登录
-            persentLogin(self)
-            return
-        }
+//        /// 一下功能需要先登录
+//        guard isLogin().0 else {
+//            // 先去登录
+//            persentLogin(self)
+//            return
+//        }
         
-        if creditModel?.isTelAuthentication == false {
-            showMsg("请先完成银行卡认证")
-            return
-        }
-        printLog("个人认证")
+//        if creditModel?.isTelAuthentication == false {
+//            showMsg("请先完成银行卡认证")
+//            return
+//        }
+        
     }
     
     /// 芝麻认证
     @IBAction func zhimaApprove(_ sender: UIButton) {
-        /// 一下功能需要先登录
-        guard isLogin().0 else {
-            // 先去登录
-            persentLogin(self)
-            return
-        }
+//        /// 一下功能需要先登录
+//        guard isLogin().0 else {
+//            // 先去登录
+//            persentLogin(self)
+//            return
+//        }
+//
+//        if creditModel?.isTelAuthentication == false {
+//            showMsg("请先完成银行卡认证")
+//            return
+//        }
+//
+//        if creditModel?.isFaceRecognition == false {
+//            showMsg("请先完成个人信息认证")
+//            return
+//        }
         
-        if creditModel?.isTelAuthentication == false {
-            showMsg("请先完成银行卡认证")
-            return
-        }
-        
-        if creditModel?.isFaceRecognition == false {
-            showMsg("请先完成个人信息认证")
-            return
-        }
-        
-        printLog("芝麻认证")
     }
     
     /// 运营商认证
     @IBAction func operatorApporve(_ sender: UIButton) {
-        /// 一下功能需要先登录
-        guard isLogin().0 else {
-            // 先去登录
-            persentLogin(self)
-            return
-        }
+//        /// 一下功能需要先登录
+//        guard isLogin().0 else {
+//            // 先去登录
+//            persentLogin(self)
+//            return
+//        }
+//
+//        if creditModel?.isTelAuthentication == false {
+//            showMsg("请先完成银行卡认证")
+//            return
+//        }
+//
+//        if creditModel?.isFaceRecognition == false {
+//            showMsg("请先完成个人信息认证")
+//            return
+//        }
+//
+//        if creditModel?.isSesameCredit == false {
+//           showMsg("请先完成个人信息认证")
+//            return
+//        }
         
-        if creditModel?.isTelAuthentication == false {
-            showMsg("请先完成银行卡认证")
-            return
-        }
-        
-        if creditModel?.isFaceRecognition == false {
-            showMsg("请先完成个人信息认证")
-            return
-        }
-        
-        if creditModel?.isSesameCredit == false {
-           showMsg("请先完成个人信息认证")
-            return
-        }
-        
-        printLog("运营商认证")
     }
     
     fileprivate func showMsg(_ text: String) {
@@ -239,7 +240,7 @@ extension CreditViewController {
         
         creditStrLab = UILabel()
         creditView.addSubview(creditStrLab)
-        creditStrLab.text = "信用优"
+        creditStrLab.text = "信用良好"
         creditStrLab.textColor = UIColor(hexString: "FFC832")
         creditStrLab.font = UIFont.systemFont(ofSize: 12)
         
@@ -273,7 +274,7 @@ extension CreditViewController {
     
         let layRect = CGRect(x: 0, y: 0, width: kScreen_w, height: kScreen_h*0.4)
         
-        layView = LayView(frame: layRect, endAngle: CGFloat(20/180.0*Double.pi))
+        layView = LayView(frame: layRect, endAngle: CGFloat(300/180.0*Double.pi))
         self.creditView.addSubview(layView)
         layView.setAnimated()
     }
@@ -299,8 +300,6 @@ extension CreditViewController {
         }else{
           apath.addArc(withCenter: center, radius: 75, startAngle: CGFloat(startAng), endAngle: CGFloat(endAng) - endAng, clockwise: true)
         }
-        
-        
         
         /// 渲染图层
         let pathLayer = CAShapeLayer()

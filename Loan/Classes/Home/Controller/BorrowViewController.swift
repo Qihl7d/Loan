@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class BorrowViewController: UIViewController {
 
@@ -35,6 +36,10 @@ class BorrowViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    deinit {
+        print("借款界面被销毁~")
     }
     
     // MARK: - 懒加载
@@ -141,14 +146,8 @@ extension BorrowViewController: UICollectionViewDelegate, UICollectionViewDataSo
 //
 //        let cell = collectionView.cellForItem(at: indexPath) as! CardCell
 //        cell.transform = CGAffineTransform.init(scaleX: 1.2, y: 1.2)
-        
-      
-        
+
         printLog("点击了第--\(indexPath.row)")
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        printLog("偏移量\(scrollView.contentOffset.x)")
     }
     
 }
@@ -161,48 +160,26 @@ extension BorrowViewController: LendViewDelegate {
         case 0:
             
             let dataStr = ["7天","14天","21天","28天"]
-            
-//            StringPickerView.show(dataArray: dataStr) { (text) in
-//                printLog("选择了----\(text)")
-//                lendView.dayLab.text = text
-//            }
-            
+
             StringPickerView.show("请选择借款期限", dataArray: dataStr, selectBlock: { (text) in
-                printLog("选择了----\(text)")
                 lendView.dayLab.text = text
             })
-            
-//            let buttons = [
-//                ["title": "7天","handler": "7天"],
-//                ["title": "14天","handler": "14天"],
-//                ["title": "21天","handler": "21天"]
-//            ]
-//
-//            let cancelBtn = ["title": "取消",]
-//
-//            let mmActionSheet = MMActionSheet.init(title: "请选择借款期限", buttons: buttons, duration: nil, cancelBtn: cancelBtn)
-//            mmActionSheet.callBack = { (handler) ->() in
-//                printLog("旋转的是----\(handler)")
-//
-//                if handler == "7天" {
-//                    lendView.dayLab.text = "7天"
-//                }else if handler == "14天" {
-//                    lendView.dayLab.text = "14天"
-//                }else {
-//                    lendView.dayLab.text = "21天"
-//                }
-//
-//            }
-//            mmActionSheet.present()
+
             
         case 1:
+            
             printLog("点击了-----\(index)")
+            
         case 2:
             
             let bankVC = BankSelectViewController()
+            bankVC.didSelectBlock = { (bank) in
+                lendView.bankBtn.setTitle(bank, for: .normal)
+            }
             navigationController?.pushViewController(bankVC, animated: true)
             
         case 3:
+            MBProgressHUD.showMessage("现在还不能借款哦", toView: self.view)
             printLog("点击了-----\(index)")
         default:
             break

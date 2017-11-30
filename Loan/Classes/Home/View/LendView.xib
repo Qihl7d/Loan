@@ -291,6 +291,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="dba-ne-XB4"/>
             <connections>
+                <outlet property="bankBtn" destination="4aV-oz-VR4" id="Ac6-KQ-ZdK"/>
                 <outlet property="dayLab" destination="j2V-jB-gc5" id="g51-ej-vQL"/>
                 <outlet property="getMoneyLab" destination="nwL-4w-10c" id="BFX-sD-RLq"/>
                 <outlet property="interestLab" destination="S4h-wg-rdD" id="15V-aP-5aR"/>

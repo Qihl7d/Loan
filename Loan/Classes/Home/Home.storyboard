@@ -98,7 +98,6 @@
                                 <segue destination="jOk-H2-NWP" kind="show" id="HuT-iP-CAc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="home_question" id="acc-jX-wkR"/>
                     </navigationItem>
                     <connections>
                         <outlet property="cardImage" destination="jvs-dJ-MAf" id="E9W-cc-Uud"/>
@@ -215,7 +214,6 @@
         <image name="home_headImage" width="45" height="45"/>
         <image name="home_mes" width="22" height="22"/>
         <image name="home_qipao" width="204" height="26"/>
-        <image name="home_question" width="22" height="22"/>
         <image name="tabbar_borrow" width="16" height="19"/>
         <image name="tabbar_borrow_h" width="16" height="19"/>
     </resources>

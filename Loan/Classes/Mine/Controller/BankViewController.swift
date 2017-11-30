@@ -22,7 +22,7 @@ class BankViewController: UIViewController {
     fileprivate var isFirstRun: Bool!
     
     var bankNameArray: [String] = {
-        return ["中国银行","建设银行","农业银行","招商银行","交通银行","中国银行","建设银行","农业银行","招商银行","交通银行"]
+        return ["中国银行","建设银行","农业银行","招商银行","交通银行"]
     }()
     
     override func viewDidLoad() {

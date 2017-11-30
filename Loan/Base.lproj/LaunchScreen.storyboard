@@ -18,31 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A1L-w1-X3b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImage" translatesAutoresizingMaskIntoConstraints="NO" id="k20-rM-2TS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.31372549020000001" green="0.56078431370000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="欢迎 使用中融秒贷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r0-Ox-caF">
-                                <rect key="frame" x="57" y="571" width="260" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="A1L-w1-X3b" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Vpc-Ao-ZiD"/>
-                            <constraint firstItem="A1L-w1-X3b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kQN-Qb-zOG"/>
-                            <constraint firstItem="A1L-w1-X3b" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vRU-sI-3dX"/>
-                            <constraint firstItem="A1L-w1-X3b" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ycm-AW-keo"/>
+                            <constraint firstItem="k20-rM-2TS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9xF-Vs-qJQ"/>
+                            <constraint firstItem="k20-rM-2TS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GXK-YA-ZQ5"/>
+                            <constraint firstItem="k20-rM-2TS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Xgh-O5-2mY"/>
+                            <constraint firstItem="k20-rM-2TS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nvT-p6-9eJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157.59999999999999" y="392.65367316341832"/>
+            <point key="canvasLocation" x="-530.39999999999998" y="421.43928035982015"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="launchImage" width="750" height="1334"/>
+    </resources>
 </document>

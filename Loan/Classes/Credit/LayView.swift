@@ -43,6 +43,7 @@ class LayView: UIView {
     init(frame: CGRect, endAngle: CGFloat) {
         super.init(frame: frame)
         self.animEnd = endAngle
+        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -85,15 +86,13 @@ class LayView: UIView {
         dottedLayer.lineDashPattern = [NSNumber(value: 1), NSNumber(value: 4)]
         
         let animPath = CGMutablePath()
-        animPath.addArc(center: CGPoint(x: bounds.midX, y: bounds.midY), radius: 70, startAngle: startAngle, endAngle: CGFloat(20/180.0*Double.pi)  , clockwise: false)
+        animPath.addArc(center: CGPoint(x: bounds.midX, y: bounds.midY), radius: 70, startAngle: startAngle, endAngle: CGFloat(self.animEnd)  , clockwise: false)
         dottedLayer.path = animPath
         layer.addSublayer(dottedLayer)
         
     }
     
     func setAnimated() {
-        
-        setupUI()
         
         /// 如果存在 就先移除后在动画
 //        if iamgeView != nil {
@@ -106,11 +105,11 @@ class LayView: UIView {
         
         // 外圈(显色圈)动画
         let animation=CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.duration = duration  // 动画的时长
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut) // 设置动画的速度变化
         animation.fromValue = 0
         animation.toValue = 1
-        animation.autoreverses = false
+        animation.autoreverses = false // 动画结束时是否执行逆动画
         animation.fillMode=kCAFillModeForwards
         progressLayer.add(animation, forKey: "strokeEndAnimation")
         
@@ -124,9 +123,10 @@ class LayView: UIView {
         let orbit1 = CAKeyframeAnimation(keyPath:"position")
         orbit1.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         orbit1.calculationMode = kCAAnimationPaced // 我理解为节奏
-        orbit1.fillMode = kCAFillModeForwards
         orbit1.rotationMode = kCAAnimationRotateAuto  // 根据路径自动旋转
+        // 防止动画结束后回到初始状态
         orbit1.isRemovedOnCompletion = false  // 是否在动画完成后从 Layer 层上移除  回到最开始状态
+        orbit1.fillMode = kCAFillModeForwards
         orbit1.duration = duration
         orbit1.path = path.cgPath
 
@@ -143,9 +143,9 @@ class LayView: UIView {
         let arrowOrbit = CAKeyframeAnimation(keyPath:"position")
         arrowOrbit.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         arrowOrbit.calculationMode = kCAAnimationPaced // 我理解为节奏
-        arrowOrbit.fillMode = kCAFillModeForwards
         arrowOrbit.rotationMode = kCAAnimationRotateAuto  // 根据路径自动旋转
         arrowOrbit.isRemovedOnCompletion = false  // 是否在动画完成后从 Layer 层上移除  回到最开始状态
+        arrowOrbit.fillMode = kCAFillModeForwards
         arrowOrbit.duration = duration
         arrowOrbit.path = arrowPath.cgPath
         

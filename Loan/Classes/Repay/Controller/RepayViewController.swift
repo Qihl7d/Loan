@@ -43,11 +43,11 @@ class RepayViewController: UIViewController {
     
     @IBAction func GoRepay(_ sender: UIButton) {
         
-        // 先判断是否登录 没登录 就先登录
-        guard  isLogin().0 else {
-            persentLogin(self)
-            return
-        }
+//        // 先判断是否登录 没登录 就先登录
+//        guard  isLogin().0 else {
+//            persentLogin(self)
+//            return
+//        }
         
         performSegue(withIdentifier: "GoRepayIdentifier", sender: nil)
         

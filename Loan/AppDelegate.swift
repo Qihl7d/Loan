@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         printLog("window----\(String(describing: window?.frame))")
         
+        Thread.sleep(forTimeInterval: 1.0)
+        
         // 提前注册一个VersionCode 的 NSUserDefaults
         let dict: [String: Any] = [logigSuccess: "0"] // 0： 表示没有登录
         UserDefaults.standard.register(defaults: dict)
@@ -31,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             printLog("mieqia---\(String(describing: clientId))---\(String(describing: error))")
         }
         
+        // TODO: 为了被拒。直接注释掉一下代码
         // 请求访问通讯录
         /// 第一次 先去请求访问通讯录
         CNContactStore().requestAccess(for: .contacts) { (isRight, error) in

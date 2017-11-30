@@ -32,7 +32,7 @@
                                             <constraint firstAttribute="height" constant="129" id="LV2-ta-Vb8"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eas-ge-Fda">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eas-ge-Fda">
                                         <rect key="frame" x="137.5" y="218" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="60d-nG-evi"/>
@@ -45,12 +45,20 @@
                                             <action selector="requestLoan:" destination="WCP-31-em0" eventType="touchUpInside" id="gCV-cv-koO"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您的综合信用评级" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-qK-1ru">
+                                        <rect key="frame" x="117.5" y="213" width="139" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eas-ge-Fda" firstAttribute="top" secondItem="a0a-DA-0nk" secondAttribute="bottom" constant="20" id="RRx-Jc-xdl"/>
                                     <constraint firstItem="a0a-DA-0nk" firstAttribute="centerX" secondItem="n5l-xU-x3M" secondAttribute="centerX" id="UQg-yN-08F"/>
                                     <constraint firstItem="a0a-DA-0nk" firstAttribute="centerY" secondItem="n5l-xU-x3M" secondAttribute="centerY" id="gjf-lV-SOZ"/>
                                     <constraint firstItem="eas-ge-Fda" firstAttribute="centerX" secondItem="a0a-DA-0nk" secondAttribute="centerX" id="khf-hj-6Ax"/>
+                                    <constraint firstItem="QGa-qK-1ru" firstAttribute="top" secondItem="a0a-DA-0nk" secondAttribute="bottom" constant="15" id="oZ3-MZ-T8A"/>
+                                    <constraint firstItem="QGa-qK-1ru" firstAttribute="centerX" secondItem="a0a-DA-0nk" secondAttribute="centerX" id="zxu-Gg-k7q"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit_unapprove" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-88-xde">
@@ -193,7 +201,6 @@
                                 <rect key="frame" x="15" y="292" width="345" height="61"/>
                                 <connections>
                                     <action selector="bankApprove:" destination="WCP-31-em0" eventType="touchUpInside" id="f6z-Ut-bGj"/>
-                                    <segue destination="bQO-Ro-4xy" kind="presentation" modalTransitionStyle="flipHorizontal" id="N01-r6-kpp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZw-Hy-NH1" userLabel="person">
@@ -287,113 +294,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eI7-9k-NUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1508" y="726"/>
-        </scene>
-        <!--Bank Approve View Controller-->
-        <scene sceneID="2nh-Wn-FNf">
-            <objects>
-                <viewController id="bQO-Ro-4xy" customClass="BankApproveViewController" customModule="Loan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Oio-IL-qnW"/>
-                        <viewControllerLayoutGuide type="bottom" id="hok-Z1-JaA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6MY-gm-6aB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAW-Nw-9b6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行卡认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKv-6A-c2A">
-                                        <rect key="frame" x="144" y="31" width="87" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdH-vw-C4d">
-                                        <rect key="frame" x="17" y="26" width="31" height="30"/>
-                                        <state key="normal" title="取消">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelAction:" destination="bQO-Ro-4xy" eventType="touchUpInside" id="nlY-bP-hjw"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.31372549020000001" green="0.56078431370000004" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="CdH-vw-C4d" secondAttribute="bottom" constant="8" id="ItV-HE-3N2"/>
-                                    <constraint firstItem="CdH-vw-C4d" firstAttribute="leading" secondItem="LAW-Nw-9b6" secondAttribute="leading" constant="17" id="bho-T5-TqN"/>
-                                    <constraint firstItem="EKv-6A-c2A" firstAttribute="centerY" secondItem="CdH-vw-C4d" secondAttribute="centerY" id="kFc-rw-IGK"/>
-                                    <constraint firstItem="EKv-6A-c2A" firstAttribute="centerX" secondItem="LAW-Nw-9b6" secondAttribute="centerX" id="zU5-R9-Vr8"/>
-                                    <constraint firstAttribute="height" constant="64" id="zUu-D5-C2J"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="LAW-Nw-9b6" secondAttribute="trailing" id="Ec9-fF-BQE"/>
-                            <constraint firstItem="LAW-Nw-9b6" firstAttribute="top" secondItem="6MY-gm-6aB" secondAttribute="top" id="gBW-jL-c2w"/>
-                            <constraint firstItem="LAW-Nw-9b6" firstAttribute="leading" secondItem="6MY-gm-6aB" secondAttribute="leading" id="nof-D4-fpg"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oxd-c2-IuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2382" y="-36"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="3mp-QD-F2d">
-            <objects>
-                <viewController id="eMQ-aJ-fDs" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dWx-hj-pTX"/>
-                        <viewControllerLayoutGuide type="bottom" id="zw9-0q-XRO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eJP-r7-w2e">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ipV-g3-Z9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3230" y="228"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="6go-Gj-ekn">
-            <objects>
-                <viewController id="DUA-bL-Xpv" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3kq-uF-nNP"/>
-                        <viewControllerLayoutGuide type="bottom" id="gdW-YP-96J"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ov6-aA-s9Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FGV-nM-hlm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2382" y="1576"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="TJc-FY-TMB">
-            <objects>
-                <viewController id="WKb-KU-k5V" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="x7F-g9-boW"/>
-                        <viewControllerLayoutGuide type="bottom" id="8QE-6M-tsp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HSU-Nz-DtV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wyW-31-Oes" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3230" y="983"/>
         </scene>
         <!--信用-->
         <scene sceneID="d9r-yg-enK">

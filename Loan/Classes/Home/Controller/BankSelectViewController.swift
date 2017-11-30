@@ -28,6 +28,8 @@ class BankSelectViewController: UIViewController {
         return tableView
     }()
     
+    var didSelectBlock: ((_ bank: String) -> Swift.Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -44,23 +46,16 @@ extension BankSelectViewController {
     
     fileprivate func setupUI() {
         title = "选择银行卡"
-        
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_question"), style: .plain, target: self, action: #selector(rightBarBarAction))
-        
         view.addSubview(tableView)
     }
     
     @objc func rightBarBarAction() {
         printLog("点击了添加按钮")
-        
-//        let addbankVC = UIStoryboard(name: "Bank", bundle: nil).instantiateViewController(withIdentifier: "AddBankViewController") as! AddBankViewController
-//        navigationController?.pushViewController(addbankVC, animated: true)
     }
 
 }
 
 extension BankSelectViewController: UITableViewDelegate, UITableViewDataSource {
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
@@ -70,12 +65,18 @@ extension BankSelectViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "bankSelectCell", for: indexPath) as! bankSelectCell
         cell.bankLab.text = dataArray[indexPath.row]
-        cell.selectionStyle = .none
+        cell.selectionStyle = .default
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if didSelectBlock != nil {
+            didSelectBlock!(dataArray[indexPath.row])
+        }
+        
+        navigationController?.popViewController(animated: true)
         
     }
     

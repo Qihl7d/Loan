@@ -877,7 +877,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Loan/Loan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Lan (2M8FL34CXY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Wanzhuanshenghuo Technology Co., Ltd (7DMKVRZF28)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7DMKVRZF28;
 				INFOPLIST_FILE = Loan/Info.plist;
@@ -885,8 +885,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanle.Loan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e1328e7c-cd77-4c2f-8ab4-f3b3fd84daea";
-				PROVISIONING_PROFILE_SPECIFIER = load_develop;
+				PROVISIONING_PROFILE = "2128332e-d287-4738-bf2c-276636492f93";
+				PROVISIONING_PROFILE_SPECIFIER = load_distribute;
 				SWIFT_OBJC_BRIDGING_HEADER = "Loan/Loan-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -901,7 +901,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Loan/Loan.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chao Lan (2M8FL34CXY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chengdu Wanzhuanshenghuo Technology Co., Ltd (7DMKVRZF28)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 7DMKVRZF28;
 				INFOPLIST_FILE = Loan/Info.plist;
@@ -909,8 +909,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanle.Loan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e1328e7c-cd77-4c2f-8ab4-f3b3fd84daea";
-				PROVISIONING_PROFILE_SPECIFIER = load_develop;
+				PROVISIONING_PROFILE = "ae9b0071-b62f-49a6-81bb-2fe9a7e2c2c9";
+				PROVISIONING_PROFILE_SPECIFIER = load_distribute;
 				SWIFT_OBJC_BRIDGING_HEADER = "Loan/Loan-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -26,6 +26,8 @@ class LendView: UIView {
     @IBOutlet weak var serviceLab: UILabel!
     /// 借款到账的钱
     @IBOutlet weak var getMoneyLab: UILabel!
+    ///  银行按钮
+    @IBOutlet weak var bankBtn: UIButton!
     
     weak var delegate: LendViewDelegate?
     

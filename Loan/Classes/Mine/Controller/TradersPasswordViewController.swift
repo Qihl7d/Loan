@@ -137,16 +137,15 @@ extension TradersPasswordViewController: UITextFieldDelegate {
     
                 if psd.count == 6 {
                     
-                    // 拼接字符串
-                    let ps = psd.joined(separator: "")
+                    // 拼接密码字符串
+                    _ = psd.joined(separator: "")
+                    
                     
                     DispatchQueue.main.async {
-                        MBProgressHUD.showMessage("你输入的密码位\(ps)", toView: self.view)
+                        MBProgressHUD.showMessage("交易密码设置成功", toView: keyView)
+                        self.navigationController?.popViewController(animated: true)
                     }
-                    
-                    let psVC = TradersPasswordViewController()
-                    self.navigationController?.pushViewController(psVC, animated: true)
-                    
+  
                 }
                 
                 return true
